@@ -1,0 +1,24 @@
+.how-to-find__place-photo {
+	width: 100%;
+	height: 100%;
+	border-radius: 60px;
+	object-position: top;
+	object-fit: cover;
+	-ms-filter: brightness(95%);
+	-webkit-filter: brightness(95%);
+	-moz-filter: brightness(95%);
+	-o-filter: brightness(95%);
+	filter: brightness(95%);
+}
+
+@media screen and (max-width: 768px) {
+	.how-to-find__place-photo {
+		border-radius: 40px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.how-to-find__place-photo {
+		border-radius: 30px;
+	}
+}

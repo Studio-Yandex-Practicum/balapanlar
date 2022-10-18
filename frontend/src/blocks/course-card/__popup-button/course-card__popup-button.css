@@ -1,0 +1,48 @@
+.course-card__popup-button {
+	position: relative;
+	padding: 0;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.course-card__popup-button::after {
+	position: absolute;
+	right: 0;
+	bottom: -5px;
+	left: 0;
+	width: 0%;
+	height: 1px;
+	margin: auto;
+	background: #252525;
+	transition: all 0.5s;
+	content: '';
+}
+
+.course-card__popup-button:hover::after {
+	width: 100%;
+}
+
+.course-card__popup-button:focus-visible {
+	border-radius: 60px;
+	outline: 2px solid #252525;
+	outline-offset: 22px;
+}
+
+@media screen and (max-width: 660px) {
+	.course-card__popup-button:focus-visible {
+		border-radius: 30px;
+		outline: 1px solid #252525;
+		outline-offset: 10px;
+	}
+}
+
+@media screen and (max-width: 570px) {
+	.course-card__popup-button {
+		font-size: 16px;
+		line-height: 19.5px;
+	}
+}

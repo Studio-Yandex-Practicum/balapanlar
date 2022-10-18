@@ -1,0 +1,21 @@
+.principles__text {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 847px;
+	margin: 0;
+	padding-top: 40px;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.principles__text {
+		max-width: 552px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.principles__text {
+		max-width: 288px;
+		padding-top: 30px;
+	}
+}

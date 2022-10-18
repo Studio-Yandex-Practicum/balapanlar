@@ -1,0 +1,27 @@
+.support-us-card__paragraph{
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 1.21;
+	letter-spacing: -0.5px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.support-us-card__paragraph:not(p:last-of-type){
+	margin: 0 0 14px;
+}
+
+.support-us-card__paragraph:last-of-type{
+	margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+	.support-us-card__paragraph{
+		font-size: 16px;
+		line-height: 1.25;
+		letter-spacing: 0;
+	}
+
+	.support-us-card__paragraph:not(p:last-of-type){
+		margin: 0;
+	}
+}

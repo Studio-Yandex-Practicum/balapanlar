@@ -1,0 +1,27 @@
+.principles__pic {
+	display: flex;
+	margin-top: 244px;
+}
+
+@media screen and (min-height: 1200px) {
+	.principles__pic {
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.principles__pic {
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.principles__pic {
+		max-width: 230px;
+		background-size: cover;
+	}
+}
+
+.no-js .principles__pic {
+	margin-top: 120px;
+}

@@ -1,0 +1,14 @@
+@media screen and (max-width: 768px) {
+	.popup__container_type_course {
+		margin-top: 95px;
+		padding-right: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.popup__container_type_course {
+		margin-top: 50px;
+		padding-right: 15px;
+		border-radius: 30px;
+	}
+}

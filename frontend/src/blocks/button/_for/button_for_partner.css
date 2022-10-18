@@ -1,0 +1,13 @@
+.button_for_partner {
+	box-sizing: border-box;
+	margin: 40px auto 0;
+	padding: 20px 28px;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+@media screen and (max-width: 480px) {
+	.button_for_partner {
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,40 @@
+.principles {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-items: flex-start;
+	width: 300%;
+	min-height: calc(100vh + 80px);
+	overflow: hidden;
+	color: #ffffff;
+	background-color: #ae46ff;
+	border-radius: 50px;
+}
+
+@media screen and (min-height: 1200px) {
+	.principles {
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.principles {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.principles {
+		border-radius: 30px;
+	}
+}
+
+.no-js .principles {
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+}

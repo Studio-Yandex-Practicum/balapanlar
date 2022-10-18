@@ -1,0 +1,5 @@
+@media screen and (max-width: 1110px) {
+	.button_for_header {
+		display: none;
+	}
+}

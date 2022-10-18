@@ -1,0 +1,25 @@
+.button {
+	width: min-content;
+	height: min-content;
+	padding: 16px 22px;
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+	white-space: nowrap;
+	background-color: #252525;
+	border-radius: 50px;
+}
+
+.button:hover {
+	background-color: #353535;
+}
+
+.button:active {
+	border: 0;
+}
+
+.button:focus-visible {
+	outline: 2px solid #252525;
+	outline-offset: 2px;
+}

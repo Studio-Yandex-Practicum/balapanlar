@@ -1,0 +1,13 @@
+.course-card__text {
+	margin: 0;
+	padding: 0 2px 0 0;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+@media screen and (max-width: 480px) {
+	.course-card__text {
+		font-size: 16px;
+		line-height: 20px;
+	}
+}

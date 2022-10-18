@@ -1,0 +1,28 @@
+.how-to-find__adds {
+	max-width: 808px;
+	margin: 0;
+	font-weight: 600;
+	font-size: 36px;
+	font-style: normal;
+	line-height: 1.22;
+	letter-spacing: -1px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@media screen and (max-width: 768px) {
+	.how-to-find__adds {
+		max-width: 594px;
+		font-size: 30px;
+		line-height: 1.23;
+		letter-spacing: -0.5px;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	.how-to-find__adds {
+		max-width: 290px;
+		font-size: 24px;
+		line-height: 1.2;
+	}
+}

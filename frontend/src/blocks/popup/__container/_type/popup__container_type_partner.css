@@ -1,0 +1,18 @@
+.popup__container_type_partner {
+	max-width: 885px;
+	padding: 40px;
+}
+
+@media screen and (max-width: 992px) {
+	.popup__container_type_partner {
+		max-width: 594px;
+		padding: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.popup__container_type_partner {
+		max-width: 300px;
+		padding: 30px 15px;
+	}
+}

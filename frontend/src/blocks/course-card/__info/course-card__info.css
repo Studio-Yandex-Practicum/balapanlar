@@ -1,0 +1,16 @@
+.course-card__info {
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 21.94px;
+	letter-spacing: -0.5px;
+}
+
+@media screen and (max-width: 570px) {
+	.course-card__info {
+		font-size: 16px;
+		line-height: 19.5px;
+		letter-spacing: 0;
+	}
+}

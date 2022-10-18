@@ -1,0 +1,25 @@
+.persons{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 40px;
+	max-width: 1440px;
+	margin: 0;
+	padding: 0;
+	padding-top: 80px;
+	column-gap: 10px;
+	list-style: none;
+}
+
+@media screen and (max-width: 1026px) {
+	.persons {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 566px) {
+	.persons {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 30px;
+		padding-top: 30px;
+	}
+}

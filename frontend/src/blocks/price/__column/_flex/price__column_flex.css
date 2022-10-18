@@ -1,0 +1,4 @@
+.price__column_flex {
+	display: flex;
+	flex-direction: column;
+}

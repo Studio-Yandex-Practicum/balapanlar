@@ -1,0 +1,23 @@
+name: EditorConfig
+
+on:
+  pull_request:
+    branches: [ master, develop ]
+  push:
+    branches: [ master, develop ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:  [16]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Node Install ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - name: Linter editorconfig
+        run: npm run editorconfig

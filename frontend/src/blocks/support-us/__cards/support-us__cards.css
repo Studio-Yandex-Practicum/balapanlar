@@ -1,0 +1,15 @@
+.support-us__cards {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: 1fr;
+	gap: 10px 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@media screen and (max-width: 980px) {
+	.support-us__cards{
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,45 @@
+.button_for_how-to-find {
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	width: 64px;
+	height: 64px;
+	padding: 22.5px;
+	background-color: #252525;
+	background-image: url('../../../images/how-to-find__place-zoom.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 26px;
+	border: 0;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.button_for_how-to-find:hover{
+	background-color: #353535;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+	.button_for_how-to-find {
+		top: 20px;
+		right: 20px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.button_for_how-to-find {
+		top: 20px;
+		right: 20px;
+		width: 60px;
+		height: 60px;
+		padding: 21px;
+		background-size: 24px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.button_for_how-to-find {
+		top: 10px;
+		right: 10px;
+	}
+}

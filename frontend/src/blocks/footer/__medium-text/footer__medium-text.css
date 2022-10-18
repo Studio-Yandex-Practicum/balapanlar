@@ -1,0 +1,25 @@
+.footer__medium-text {
+	max-width: 493px;
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.22;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.footer__medium-text:last-of-type {
+	padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.footer__medium-text {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.footer__medium-text {
+		text-align: start;
+	}
+}

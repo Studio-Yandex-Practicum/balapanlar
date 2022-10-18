@@ -1,0 +1,35 @@
+.logo_type_header-animals {
+	display: block;
+	width: 105px;
+	height: 100px;
+	margin-right: 115px;
+	background-image: url('../../../images/logo-animals.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@media screen and (max-width: 1300px) {
+	.logo_type_header-animals {
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 1110px) {
+	.logo_type_header-animals {
+		width: 155px;
+		height: 148px;
+		margin-bottom: 60px;
+	}
+
+	.no-js .logo_type_header-animals {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.logo_type_header-animals {
+		width: 105px;
+		height: 100px;
+		margin-bottom: 30px;
+	}
+}

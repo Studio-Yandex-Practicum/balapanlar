@@ -1,0 +1,18 @@
+.flex-container_type_text {
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+	.flex-container_type_text {
+		gap: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.flex-container_type_text {
+		gap: 20px;
+	}
+}

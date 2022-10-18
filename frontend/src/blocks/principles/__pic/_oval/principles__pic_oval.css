@@ -1,0 +1,23 @@
+.principles__pic_oval {
+	border-radius: 500px;
+	aspect-ratio: 1.4;
+}
+
+@media screen and (max-width: 768px) {
+	.principles__pic_oval {
+		max-width: 420px;
+		min-height: 420px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.principles__pic_oval {
+		max-width: 230px;
+		min-height: auto;
+		border-radius: 500px;
+		aspect-ratio: 1.4;
+	}
+}

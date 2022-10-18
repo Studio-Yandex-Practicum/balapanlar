@@ -1,0 +1,7 @@
+.about__school-img {
+	display: block;
+	width: 100%;
+	min-width: 270px;
+	object-fit: contain;
+	aspect-ratio: 595 / 524;
+}

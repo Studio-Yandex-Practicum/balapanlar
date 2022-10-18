@@ -1,0 +1,15 @@
+.section-title_type_courses {
+	padding-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+	.section-title_type_courses {
+		padding-left: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.section-title_type_courses {
+		padding-left: 15px;
+	}
+}

@@ -1,0 +1,22 @@
+.partners__partner-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	border-radius: 60px;
+	pointer-events: none;
+	aspect-ratio: 1.45;
+}
+
+.partners__partner-link:focus-visible {
+	outline: 2px solid #eaf0ff;
+	outline-offset: -5px;
+}
+
+@media screen and (max-width: 680px) {
+	.partners__partner-link {
+		max-width: 290px;
+		border: 2px solid #eaf0ff;
+		border-radius: 30px;
+	}
+}

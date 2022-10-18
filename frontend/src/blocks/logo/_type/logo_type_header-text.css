@@ -1,0 +1,37 @@
+.logo_type_header-text {
+	width: 178px;
+	height: 31px;
+	margin-right: 40px;
+	background-image: url('../../../images/logo-text.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@media screen and (max-width: 1200px) {
+	.logo_type_header-text {
+		width: 114px;
+		height: 19px;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 1110px) {
+	.logo_type_header-text {
+		width: 177px;
+		height: 31px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.logo_type_header-text {
+		width: 166px;
+		height: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.logo_type_header-text {
+		width: 100px;
+		height: 18px;
+	}
+}

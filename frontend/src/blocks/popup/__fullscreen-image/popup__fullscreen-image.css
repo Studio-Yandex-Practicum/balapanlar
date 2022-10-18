@@ -1,0 +1,21 @@
+.popup__fullscreen-image {
+	display: block;
+	align-self: center;
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0 auto;
+	border-radius: 60px;
+	cursor: default;
+}
+
+@media screen and (max-width: 768px) {
+	.popup__fullscreen-image {
+		border-radius: 40px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.popup__fullscreen-image {
+		border-radius: 30px;
+	}
+}

@@ -1,0 +1,17 @@
+.faq__title {
+	margin: 0;
+	padding: 0 0 40px;
+	text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+	.faq__title {
+		padding: 0 0 79px;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.faq__title {
+		padding: 0 0 30px;
+	}
+}

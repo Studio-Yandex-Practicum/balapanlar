@@ -1,0 +1,24 @@
+.courses__programming-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 40px auto 0;
+	padding: 50px 10px 10px;
+	background-color: #ffd643;
+	border-radius: 70px;
+}
+
+@media screen and (max-width: 768px) {
+	.courses__programming-wrapper {
+		padding: 40px 30px 30px;
+		border-radius: 50px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.courses__programming-wrapper {
+		margin-top: 30px;
+		padding: 50px 10px 10px;
+		border-radius: 40px;
+	}
+}

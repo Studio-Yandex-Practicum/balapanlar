@@ -1,0 +1,24 @@
+.about__school-options {
+	width: 92%;
+	margin: 0 0 0 30px;
+	padding: 40px 0 0 25px;
+	list-style-image: url('../../../images/doneMark.svg');
+}
+
+@media screen and (max-width: 1200px) {
+	.about__school-options {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 903px) {
+	.about__school-options {
+		width: calc(100% - 25px);
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.about__school-options {
+		padding-top: 30px;
+	}
+}

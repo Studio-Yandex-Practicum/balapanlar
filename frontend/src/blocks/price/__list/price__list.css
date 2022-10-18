@@ -1,0 +1,11 @@
+.price__list {
+	margin: 0;
+	padding: 0 0 18px 25px;
+	list-style-image: url('../../../images/doneMark.svg');
+}
+
+@media screen and (max-width: 768px) {
+	.price__list {
+		padding-bottom: 0;
+	}
+}

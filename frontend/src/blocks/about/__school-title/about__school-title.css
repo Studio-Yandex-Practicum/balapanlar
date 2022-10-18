@@ -1,0 +1,58 @@
+.about__school-title {
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	display: flex;
+	align-items: flex-end;
+	width: 100%;
+	max-width: 429px;
+	max-height: 100%;
+	margin: 0;
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 56px;
+	letter-spacing: -1px;
+	aspect-ratio: 300 / 112;
+}
+
+@media screen and (max-width: 1439px) {
+	.about__school-title {
+		bottom: 1.08vw;
+		left: 2.08vw;
+		max-width: 250px;
+		font-size: 3.3vw;
+	}
+}
+
+@media screen and (max-width: 904px) {
+	.about__school-title {
+		bottom: 4.05vw;
+		left: 4.08vw;
+		font-size: 5.3vw;
+		line-height: 49px;
+	}
+}
+
+@media screen and (max-width: 699px) {
+	.about__school-title {
+		bottom: 3.08vw;
+		left: 3.08vw;
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.about__school-title {
+		font-size: 6.3vw;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.about__school-title {
+		bottom: 16px;
+		left: 15px;
+		max-width: 40%;
+		font-size: 7.2vw;
+		line-height: normal;
+	}
+}

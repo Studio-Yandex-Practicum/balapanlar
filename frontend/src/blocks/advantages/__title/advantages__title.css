@@ -1,0 +1,48 @@
+.advantages__title {
+	width: calc(var(--width-title) / (var(--vw) * 100vw));
+	max-width: calc(var(--width-title) * 1px);
+	margin: 0;
+	padding-right: 22px;
+	font-weight: 600;
+	font-size: 60px;
+	line-height: 68px;
+	letter-spacing: -1px;
+	white-space: pre-line;
+	text-align: left;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@media screen and (max-width: 980px) {
+	.advantages__title {
+		width: 100%;
+		max-width: 100%;
+		font-size: 48px;
+		line-height: 59px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.advantages__title {
+		padding: 0 0 70px;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.advantages__title {
+		font-size: 36px;
+		line-height: 44px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.advantages__title {
+		padding-bottom: 20px;
+	}
+}
+
+.no-js .advantages__title {
+	align-self: center;
+	padding: 0;
+	text-align: center;
+}

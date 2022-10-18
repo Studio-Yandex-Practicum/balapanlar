@@ -1,0 +1,68 @@
+.principles__heading {
+	position: absolute;
+	top: 160px;
+	left: 13.1%;
+	width: 100%;
+	margin: 0;
+	margin-left: auto;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 44px;
+	letter-spacing: -1px;
+}
+
+@media screen and (max-width: 1300px) {
+	.principles__heading {
+		left: 12.9%;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.principles__heading {
+		left: 12.2%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.principles__heading {
+		left: 11%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.principles__heading {
+		position: static;
+		display: block;
+		width: auto;
+		margin: 0;
+		margin-top: 160px;
+		font-size: 30px;
+		line-height: 37px;
+		letter-spacing: -0.5px;
+	}
+
+	.no-js .principles__heading {
+		left: calc(50% - 132px);
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.principles__heading {
+		margin-top: 30px;
+		font-size: 24px;
+		line-height: 29px;
+	}
+
+	.no-js .principles__heading {
+		left: calc(50% - 100px);
+		margin: 0;
+	}
+}
+
+.no-js .principles__heading {
+	position: absolute;
+	top: 70px;
+	left: calc(50% - 157px);
+	width: auto;
+}

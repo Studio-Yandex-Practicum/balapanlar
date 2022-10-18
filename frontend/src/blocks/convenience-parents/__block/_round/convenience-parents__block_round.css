@@ -1,0 +1,10 @@
+.convenience-parents__block_round {
+	border-radius: 50% 50% 0 0/ 100% 100% 0 0;
+}
+
+
+@media (max-width: 320px) {
+	.convenience-parents__block_round {
+		border-radius: 50% 50% 0 0/ 57% 57% 0 0;
+	}
+}

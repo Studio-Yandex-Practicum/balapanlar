@@ -1,0 +1,18 @@
+.about__school-description-container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+
+@media screen and (max-width: 903px) {
+	.about__school-description-container {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.about__school-description-container {
+		max-width: 444px;
+		padding-top: 30px;
+	}
+}

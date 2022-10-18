@@ -1,0 +1,22 @@
+.support-us__container{
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	box-sizing: border-box;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 120px;
+}
+
+@media screen and (max-width: 768px) {
+	.support-us__container {
+		padding: 80px 75px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.support-us__container {
+		gap: 30px;
+		padding: 30px 15px;
+	}
+}

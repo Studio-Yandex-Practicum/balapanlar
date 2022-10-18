@@ -1,0 +1,23 @@
+.faq-qst__button{
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: content-box;
+	width: calc(100% - 64px);
+	padding: 32px;
+	background-color: transparent;
+	border: 0;
+	border-radius: 60px;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media all and (max-width: 480px){
+	.faq-qst__button{
+		width: calc(100% - 30px);
+		padding: 15px;
+		border-radius: 30px;
+	}
+}

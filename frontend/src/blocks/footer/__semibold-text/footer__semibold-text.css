@@ -1,0 +1,21 @@
+.footer__semibold-text {
+	margin: 0;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@media screen and (max-width: 768px) {
+	.footer__semibold-text {
+		letter-spacing: -0.5px;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.footer__semibold-text {
+		letter-spacing: normal;
+		text-align: start;
+	}
+}

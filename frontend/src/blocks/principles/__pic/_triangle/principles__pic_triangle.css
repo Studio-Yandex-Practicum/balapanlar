@@ -1,0 +1,10 @@
+.principles__pic_triangle {
+	border-radius: 50% 50% 25% 25%;
+	aspect-ratio: 1;
+}
+
+@media screen and (max-width: 480px) {
+	.principles__pic_triangle {
+		max-width: 230px;
+	}
+}

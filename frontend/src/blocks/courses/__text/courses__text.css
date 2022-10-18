@@ -1,0 +1,17 @@
+.courses__text {
+	max-width: 804px;
+	margin: 10px 0 40px;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.courses__text {
+		margin-top: 15px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.courses__text {
+		margin: 10px 0;
+	}
+}

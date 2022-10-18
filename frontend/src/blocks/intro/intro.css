@@ -1,0 +1,6 @@
+.intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: linear-gradient(#ffffff 0% 50%, #eaf0ff 50% 100%);
+}

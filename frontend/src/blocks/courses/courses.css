@@ -1,0 +1,27 @@
+.courses {
+	max-width: 1220px;
+	padding: 127px 65px 0;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+@media screen and (max-width: 992px) {
+	.courses {
+		padding: 80px 65px 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.courses {
+		padding: 80px 45px 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.courses {
+		padding: 70px 0 0;
+		font-size: 16px;
+		line-height: 20px;
+	}
+}

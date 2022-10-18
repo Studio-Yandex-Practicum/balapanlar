@@ -1,0 +1,24 @@
+.button_for_lead {
+	padding: 35px 45px;
+	font-size: 28px;
+	line-height: 34px;
+	letter-spacing: -0.5px;
+	background-color: #ff7628;
+}
+
+.button_for_lead:hover {
+	background-color: #ff8540;
+}
+
+.button_for_lead:focus-visible {
+	outline: 2px solid white;
+}
+
+@media screen and (max-width: 430px) {
+	.button_for_lead {
+		padding: 16px 22px;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: normal;
+	}
+}

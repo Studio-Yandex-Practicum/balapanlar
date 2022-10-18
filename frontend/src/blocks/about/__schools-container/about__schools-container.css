@@ -1,0 +1,20 @@
+.about__schools-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(372px, 1fr));
+	gap: 10px;
+	box-sizing: border-box;
+	padding: 59px 0 122px;
+}
+
+@media screen and (max-width: 990px) {
+	.about__schools-container {
+		padding: 80px 0 80px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.about__schools-container {
+		grid-template-columns: repeat(auto-fit, minmax(289px, 1fr));
+		padding-top: 30px;
+	}
+}

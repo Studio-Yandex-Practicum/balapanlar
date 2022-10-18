@@ -1,0 +1,9 @@
+.burger-button__line-element_active:nth-child(1) {
+	top: 15px;
+	transform: rotate(45deg);
+}
+
+.burger-button__line-element_active:nth-child(2) {
+	bottom: 13px;
+	transform: rotate(-45deg);
+}

@@ -1,0 +1,33 @@
+.convenience-parents__item {
+	display: flex;
+	align-items: flex-end;
+	padding: 30px;
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: -0.5px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+	border-radius: 50px;
+	aspect-ratio: 292 / 277;
+}
+
+
+@media (max-width: 1200px) {
+	.convenience-parents__item {
+		aspect-ratio: 292 / 275;
+	}
+}
+
+@media (max-width: 604px) {
+	.convenience-parents__item {
+		align-items: center;
+		box-sizing: border-box;
+		padding: 24px;
+		font-size: 24px;
+		line-height: 29px;
+		text-align: center;
+		border-radius: 30px;
+		aspect-ratio: 300 / 400;
+	}
+}

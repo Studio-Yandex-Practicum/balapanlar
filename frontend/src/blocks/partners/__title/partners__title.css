@@ -1,0 +1,24 @@
+.partners__title {
+	margin: 0 auto;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 44px;
+	letter-spacing: -1px;
+	text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+	.partners__title {
+		font-size: 30px;
+		line-height: 37px;
+		letter-spacing: -0.5px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.partners__title {
+		margin: 0 88px 0 0;
+		font-size: 24px;
+		line-height: 29px;
+	}
+}

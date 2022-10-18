@@ -1,0 +1,7 @@
+.faq-qst__plus_opened::after {
+	transform: rotateZ(90deg);
+}
+
+.faq-qst__plus_opened::before {
+	transform: rotate3d(1, 0, 1, 180deg);
+}

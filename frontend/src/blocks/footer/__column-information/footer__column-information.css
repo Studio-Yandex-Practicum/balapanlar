@@ -1,0 +1,24 @@
+.footer__column-information {
+	display: flex;
+	grid-area: 1 / 2 / 3 / 3;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	gap: 15px;
+	margin: 0;
+	text-align: left;
+}
+
+@media screen and (max-width: 1159px) {
+	.footer__column-information {
+		align-items: center;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.footer__column-information {
+		align-items: flex-start;
+		text-align: start;
+	}
+}

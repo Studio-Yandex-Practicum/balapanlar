@@ -1,0 +1,47 @@
+.header__link {
+	position: relative;
+	color: #252525;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.header__link::after {
+	position: absolute;
+	right: 0;
+	bottom: -5px;
+	left: 0;
+	width: 0%;
+	height: 1px;
+	margin: auto;
+	background: #252525;
+	transition: all 0.5s;
+	content: '';
+}
+
+.header__link:hover::after {
+	width: 100%;
+}
+
+.header__link:focus-visible {
+	border-radius: 60px;
+	outline: 2px solid #252525;
+	outline-offset: 13px;
+}
+
+@media screen and (max-width: 768px) {
+	.header__link {
+		font-size: 30px;
+		line-height: 37px;
+		letter-spacing: -0.5px;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.header__link {
+		font-size: 18px;
+		line-height: 22px;
+		letter-spacing: normal;
+	}
+}

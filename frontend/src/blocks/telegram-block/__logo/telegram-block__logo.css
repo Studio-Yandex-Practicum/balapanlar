@@ -1,0 +1,10 @@
+.telegram-block__logo {
+	width: 22px;
+	height: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+	.telegram-block__logo {
+		margin: 0;
+	}
+}

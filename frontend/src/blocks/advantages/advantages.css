@@ -1,0 +1,19 @@
+.advantages {
+	position: relative;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.advantages::before {
+	position: absolute;
+	top: -40px;
+	z-index: -1;
+	width: 100%;
+	height: 80px;
+	background-color: #ffffff;
+	content: ' ';
+}
+
+.no-js .advantages {
+	padding-top: 120px;
+}

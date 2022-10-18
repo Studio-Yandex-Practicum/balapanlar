@@ -1,0 +1,24 @@
+.course-card {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	box-sizing: border-box;
+	padding: 30px 28px 30px 30px;
+	background-color: #ffffff;
+	border-radius: 60px;
+}
+
+@media screen and (max-width: 768px) {
+	.course-card {
+		padding: 30px;
+		border-radius: 50px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.course-card {
+		row-gap: 20px;
+		padding: 15px;
+		border-radius: 30px;
+	}
+}

@@ -1,0 +1,37 @@
+.partners__container {
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch;
+	gap: 2px;
+	width: 100%;
+	max-width: 885px;
+	min-height: 239px;
+	margin: 80px auto 160px;
+	padding: 0;
+	list-style-type: none;
+	border: 2px solid #eaf0ff;
+	border-radius: 60px;
+}
+
+@media screen and (max-width: 1200px) {
+	.partners__container {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		gap: 10px;
+		max-width: 600px;
+		margin: 80px auto 0;
+		border: none;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	.partners__container {
+		max-width: 290px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.partners__container {
+		margin: 30px auto 0;
+	}
+}

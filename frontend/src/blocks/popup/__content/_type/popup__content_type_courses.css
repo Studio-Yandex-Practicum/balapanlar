@@ -1,0 +1,9 @@
+.popup__content_type_courses {
+	row-gap: 30px;
+}
+
+@media screen and (max-width: 480px) {
+	.popup__content_type_courses {
+		row-gap: 20px;
+	}
+}

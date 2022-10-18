@@ -1,0 +1,41 @@
+.faq-qst__text {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	padding: 16px 71px 0;
+	color: rgba(37, 37, 37, 1);
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+	letter-spacing: -0.5px;
+	text-align: left;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+@media all and (max-width: 768px) {
+	.faq-qst__text {
+		padding: 16px 0 0 70px;
+	}
+}
+
+
+@media all and (max-width: 650px) {
+	.faq-qst__text {
+		padding: 16px 0 0 50px;
+	}
+}
+
+
+@media all and (max-width: 520px) {
+	.faq-qst__text {
+		padding: 10px 0 0 25px;
+		font-size: 18px;
+		line-height: 22px;
+	}
+}
+
+.no-js .faq-qst__text {
+	opacity: 1;
+}

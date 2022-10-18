@@ -1,0 +1,4 @@
+.faq-qst_focused{
+	outline: #252525 solid 1px;
+	outline-offset: -2px;
+}

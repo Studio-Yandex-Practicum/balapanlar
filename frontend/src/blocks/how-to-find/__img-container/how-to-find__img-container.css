@@ -1,0 +1,29 @@
+.how-to-find__img-container {
+	display: grid;
+	grid-template-rows: min-content;
+	grid-template-columns: repeat(2, 50%);
+	gap: 10px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 120px 120px;
+}
+
+@media screen and (max-width: 1000px) {
+	.how-to-find__img-container{
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.how-to-find__img-container {
+		padding: 0 75px 80px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.how-to-find__img-container {
+		padding: 0 15px 30px;
+	}
+}

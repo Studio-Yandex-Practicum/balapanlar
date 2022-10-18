@@ -1,0 +1,16 @@
+.tag {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 10px 14px;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	border-radius: 50px;
+}
+
+@media screen and (max-width: 600px) {
+	.tag {
+		font-size: 16px;
+		line-height: 20px;
+	}
+}

@@ -1,0 +1,28 @@
+.convenience-parents__title {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 260px 0 120px;
+	color: #252525;
+	font-weight: 600;
+	font-size: 60px;
+	line-height: 68px;
+	letter-spacing: -1px;
+	text-align: center;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@media (max-width: 1200px) {
+	.convenience-parents__title {
+		padding: 160px 0 80px;
+		font-size: 48px;
+		line-height: 59px;
+	}
+}
+
+@media (max-width: 604px) {
+	.convenience-parents__title {
+		padding: 100px 30px 50px;
+		font-size: 36px;
+		line-height: 44px;
+	}
+}

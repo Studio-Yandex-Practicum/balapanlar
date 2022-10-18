@@ -1,0 +1,17 @@
+.advantages__card-tag {
+	color: #252525;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+	letter-spacing: -0.5px;
+	background: #ffffff;
+	border: none;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@media screen and (max-width: 600px) {
+	.advantages__card-tag {
+		font-size: 18px;
+		line-height: 22px;
+	}
+}

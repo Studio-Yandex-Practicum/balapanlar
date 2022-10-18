@@ -1,0 +1,37 @@
+.how-to-find__place-container {
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+	border-radius: 60px;
+	aspect-ratio: 1.14;
+}
+
+.how-to-find__place-container::before{
+	position: absolute;
+	bottom: -25px;
+	left: -415px;
+	z-index: 1;
+	width: 800px;
+	height: 244px;
+	content: '';
+	background-image: url('../../../images/die_bold.svg');
+}
+
+@media screen and (max-width: 520px) {
+	.how-to-find__place-container::before {
+		bottom: -20px;
+		background-image: url('../../../images/die_normal.svg');
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.how-to-find__place-container {
+		border-radius: 30px;
+	}
+
+	.how-to-find__place-container::before {
+		bottom: -28px;
+		left: -480px;
+		background-image: url('../../../images/die_thin.svg');
+	}
+}

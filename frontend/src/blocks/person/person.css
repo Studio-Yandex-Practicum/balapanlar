@@ -1,0 +1,5 @@
+.person{
+	display: flex;
+	flex-direction: column;
+	max-width: 393px;
+}

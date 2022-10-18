@@ -1,0 +1,5 @@
+.popup__partner-image {
+	object-fit: contain;
+	display: block;
+	margin: 0 auto 40px;
+}

@@ -1,0 +1,14 @@
+.support-us__subtitle{
+	margin: 0;
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 1.17;
+	letter-spacing: -1px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@media screen and (max-width: 768px) {
+	.support-us__subtitle{
+		display: none;
+	}
+}

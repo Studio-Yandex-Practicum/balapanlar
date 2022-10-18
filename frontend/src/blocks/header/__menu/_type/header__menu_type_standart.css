@@ -1,0 +1,5 @@
+@media screen and (max-width: 1110px) {
+	.header__menu_type_standart {
+		display: none;
+	}
+}

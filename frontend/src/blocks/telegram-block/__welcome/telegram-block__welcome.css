@@ -1,0 +1,20 @@
+.telegram-block__welcome {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+	.telegram-block__welcome {
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.telegram-block__welcome {
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+	}
+}

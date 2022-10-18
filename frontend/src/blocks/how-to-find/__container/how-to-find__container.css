@@ -1,0 +1,21 @@
+.how-to-find__container {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 120px 120px 60px;
+}
+
+@media screen and (max-width: 768px) {
+	.how-to-find__container {
+		padding: 80px 75px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.how-to-find__container {
+		gap: 20px;
+		padding: 30px 15px;
+	}
+}

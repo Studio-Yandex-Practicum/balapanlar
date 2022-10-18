@@ -1,0 +1,24 @@
+.footer__column-copyright {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-width: 441px;
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 1159px) {
+	.footer__column-copyright {
+		align-items: center;
+		padding: 80px 0 0;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.footer__column-copyright {
+		max-width: 290px;
+		padding: 57px 0 0;
+		text-align: start;
+	}
+}

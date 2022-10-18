@@ -1,0 +1,17 @@
+.button_for_burger {
+	margin-top: 60px;
+	padding: 35px 45px;
+	font-size: 28px;
+	line-height: 34px;
+	letter-spacing: -0.5px;
+}
+
+
+@media screen and (max-width: 480px) {
+	.button_for_burger {
+		margin-top: 30px;
+		padding: 16px 22px;
+		font-size: 16px;
+		line-height: 20px;
+	}
+}

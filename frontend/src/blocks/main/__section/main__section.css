@@ -1,0 +1,7 @@
+.main__section {
+	margin: 0 auto;
+}
+
+.main__section:nth-of-type(4) {
+	margin-bottom: 10px;
+}

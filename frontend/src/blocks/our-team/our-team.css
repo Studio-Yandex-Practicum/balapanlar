@@ -1,0 +1,23 @@
+.our-team{
+	box-sizing: border-box;
+	max-height: 100%;
+	padding: 120px;
+	background-color: #ffffff;
+	border-top-left-radius: 60px;
+	border-top-right-radius: 60px;
+}
+
+
+@media screen and (max-width: 768px) {
+	.our-team {
+		padding: 80px 75px;
+		border-top-left-radius: 50px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.our-team {
+		padding: 30px 15px;
+		border-radius: 0;
+	}
+}

@@ -1,0 +1,10 @@
+.price__item {
+	margin-top: 10px;
+	padding-left: 9px;
+	font-size: 18px;
+	line-height: 21.94px;
+}
+
+.price__item:first-child {
+	margin-top: 20px;
+}

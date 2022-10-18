@@ -1,0 +1,20 @@
+.partners__partner-item {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 294px;
+	overflow: hidden;
+	cursor: pointer;
+	will-change: transform;
+	transition: transform 1s ease-in-out;
+}
+
+.partners__partner-item:hover {
+	transform: scale(1.11);
+}
+
+@media screen and (max-width: 1200px) {
+	.partners__partner-item:hover {
+		transform: scale(0.95);
+	}
+}

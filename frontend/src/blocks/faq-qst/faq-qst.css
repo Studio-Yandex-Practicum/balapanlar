@@ -1,0 +1,25 @@
+.faq-qst{
+	position: relative;
+	box-sizing: content-box;
+	width: calc(100% - 60px);
+	padding: 32px;
+	overflow: hidden;
+	border-radius: 60px;
+	transition: all 0.3s ease-in-out;
+}
+
+.faq-qst:nth-child(odd){
+	background-color: #eee8ff;
+}
+
+.faq-qst:nth-child(even){
+	background-color: #eaf0ff;
+}
+
+@media all and (max-width: 480px){
+	.faq-qst{
+		width: calc(100% - 30px);
+		padding: 15px;
+		border-radius: 30px;
+	}
+}

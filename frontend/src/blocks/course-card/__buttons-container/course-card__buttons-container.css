@@ -1,0 +1,28 @@
+.course-card__buttons-container {
+	display: flex;
+	align-items: center;
+	row-gap: 20px;
+	margin-top: auto;
+	column-gap: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+	.course-card__buttons-container {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.course-card__buttons-container {
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.course-card__buttons-container {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+}

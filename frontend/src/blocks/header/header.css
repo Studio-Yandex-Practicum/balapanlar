@@ -1,0 +1,59 @@
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100vw;
+	padding: 10px 20px;
+	background-color: #ffffff;
+}
+
+@media screen and (max-width: 1110px) {
+	.header {
+		padding: 25px 75px;
+	}
+
+	.no-js .header {
+		height: 81px;
+	}
+
+	.no-js .header::before {
+		position: absolute;
+		top: 25px;
+		left: 75px;
+		width: 165px;
+		height: 31px;
+		background-image: url('../../images/logo-text.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: ' ';
+	}
+}
+
+
+@media screen and (max-width: 570px) {
+	.header {
+		padding: 12px 15px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.no-js .header {
+		height: 42px;
+	}
+
+	.no-js .header::before {
+		position: absolute;
+		top: 12px;
+		left: 15px;
+		width: 100px;
+		height: 18px;
+		background-image: url('../../images/logo-text.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: ' ';
+	}
+}

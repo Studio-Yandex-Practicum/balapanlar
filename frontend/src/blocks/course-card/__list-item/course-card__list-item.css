@@ -1,0 +1,12 @@
+.course-card__list-item {
+	display: none;
+}
+
+.course-card__list-item:first-of-type {
+	display: list-item;
+}
+
+.course-card__list-item:first-of-type::after {
+	margin-left: -4px;
+	content: '...';
+}

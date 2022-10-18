@@ -1,0 +1,19 @@
+.convenience-parents__block {
+	padding-right: 120px;
+	padding-left: 120px;
+	background-color: #eaf0ff;
+}
+
+@media (max-width: 768px) {
+	.convenience-parents__block {
+		padding-right: 75px;
+		padding-left: 75px;
+	}
+}
+
+@media (max-width: 604px) {
+	.convenience-parents__block {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}

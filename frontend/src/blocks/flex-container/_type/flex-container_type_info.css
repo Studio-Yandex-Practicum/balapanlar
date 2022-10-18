@@ -1,0 +1,7 @@
+.flex-container_type_info {
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 10px;
+	column-gap: 30px;
+	list-style: none;
+}

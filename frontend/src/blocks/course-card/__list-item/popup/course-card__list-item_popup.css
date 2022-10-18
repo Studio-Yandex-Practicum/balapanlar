@@ -1,0 +1,10 @@
+.course-card__list-item_popup{
+	display: list-item;
+	margin-bottom: 14px;
+}
+
+@media screen and (max-width: 992px) {
+	.course-card__list-item_popup {
+		margin: 0;
+	}
+}

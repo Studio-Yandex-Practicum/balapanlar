@@ -1,0 +1,39 @@
+.advantages__card-text {
+	margin: 0;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+	letter-spacing: -0.5px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.advantages__card:nth-of-type(2) .advantages__card-text {
+	max-width: 556px;
+}
+
+.advantages__card:nth-of-type(3) .advantages__card-text {
+	max-width: 423px;
+}
+
+@media screen and (max-width: 768px) {
+	.advantages__card-text {
+		text-align: center;
+	}
+
+	.advantages__card:nth-of-type(2) .advantages__card-text {
+		max-width: 437px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.advantages__card-text {
+		font-size: 18px;
+		line-height: 22px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.advantages__card:nth-of-type(3) .advantages__card-text {
+		max-width: 229px;
+	}
+}

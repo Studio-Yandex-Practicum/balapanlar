@@ -1,0 +1,24 @@
+.price__title {
+	grid-area: title;
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 43.88px;
+	letter-spacing: -1px;
+}
+
+@media screen and (max-width: 768px) {
+	.price__title {
+		font-size: 30px;
+		line-height: 36.57px;
+		letter-spacing: -0.5px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.price__title {
+		font-size: 24px;
+		line-height: 29.26px;
+	}
+}

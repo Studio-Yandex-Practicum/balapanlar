@@ -1,0 +1,23 @@
+.courses__subtitle {
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 44px;
+	letter-spacing: -1px;
+}
+
+@media screen and (max-width: 768px) {
+	.courses__subtitle {
+		font-size: 30px;
+		line-height: 36.67px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.courses__subtitle {
+		font-size: 24px;
+		line-height: 29.26px;
+		letter-spacing: -0.5px;
+	}
+}

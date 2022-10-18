@@ -1,0 +1,47 @@
+.price {
+	display: grid;
+	grid-template-columns: minmax(min-content, 345px) 1fr minmax(min-content, 325px);
+	grid-template-areas: 'title included not-included'
+		'button included not-included';
+	justify-content: space-between;
+	box-sizing: border-box;
+	max-width: 1200px;
+	margin: 0 10px 120px;
+	padding: 30px;
+	column-gap: 50px;
+	background-color: #d0ddff;
+	border-radius: 60px;
+}
+
+@media screen and (max-width: 1200px) {
+	.price {
+		grid-template-areas: 'title included included'
+			'button not-included not-included';
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.price {
+		grid-template-areas: 'title title title'
+			'included included included'
+			'not-included not-included not-included'
+			'button button button';
+		row-gap: 30px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.price {
+		margin: 0 30px 80px;
+		border-radius: 50px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.price {
+		row-gap: 20px;
+		margin: 0 10px 80px;
+		padding: 15px;
+		border-radius: 30px;
+	}
+}

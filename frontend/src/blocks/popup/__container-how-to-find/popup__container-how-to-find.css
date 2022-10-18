@@ -1,0 +1,15 @@
+.popup__container-how-to-find {
+	position: relative;
+	align-self: center;
+	max-width: calc(100% - 150px);
+	max-height: calc(100% - 122px);
+	aspect-ratio: 1;
+	padding: 0;
+}
+
+@media screen and (max-width: 480px) {
+	.popup__container-how-to-find {
+		max-width: calc(100% - 30px);
+		max-height: calc(100% - 30px);
+	}
+}

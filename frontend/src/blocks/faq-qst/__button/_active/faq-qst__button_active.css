@@ -1,0 +1,11 @@
+.faq-qst__button_active{
+	padding-bottom: 16px;
+	border-radius: 60px 60px 15px 15px;
+}
+
+@media all and (max-width: 520px){
+	.faq-qst__button_active{
+		padding-bottom: 5px;
+		border-radius: 30px 30px 5px 5px;
+	}
+}

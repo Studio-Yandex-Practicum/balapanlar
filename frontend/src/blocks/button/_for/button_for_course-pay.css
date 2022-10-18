@@ -1,0 +1,8 @@
+.button_for_course-pay {
+	grid-area: button;
+	align-self: end;
+	margin-top: auto;
+	padding: 20px 28px;
+	font-size: 20px;
+	line-height: 24.38px;
+}

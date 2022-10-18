@@ -1,0 +1,21 @@
+.how-to-find__title {
+	margin: 0;
+	font-weight: 600;
+	font-size: 60px;
+	line-height: 1.13;
+	letter-spacing: -1px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+@media screen and (max-width: 768px) {
+	.how-to-find__title {
+		font-size: 48px;
+		line-height: 1.22;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.how-to-find__title {
+		font-size: 36px;
+	}
+}
