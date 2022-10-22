@@ -16,6 +16,7 @@ services:
       context: ../backend
       dockerfile: Dockerfile
     restart: always
+    command: gunicorn balapanlar.wsgi:application -b 0:80 --pythonpath /app
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
@@ -31,7 +32,7 @@ services:
       context: ../frontend
       dockerfile: Dockerfile
     volumes:
-      - ./frontend/:/app/result_build/
+      - ./frontend/build:/app/result_build/
     container_name: 'frontend'
 
   nginx:
@@ -44,7 +45,7 @@ services:
 
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./frontend/build:/usr/share/nginx/html/
+      - ./frontend/dist:/usr/share/nginx/html/
       - ./docs/:/usr/share/nginx/html/api/docs
       - static_value:/var/html/static/
       - media_value:/var/html/media/
