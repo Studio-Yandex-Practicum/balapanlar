@@ -9,7 +9,7 @@ class Partners(models.Model):
                         unique=True,
                         blank=False,
                         verbose_name='Название партнера')
-    text = models.TextField(
+    description = models.TextField(
                         blank=False,
                         unique=True,
                         verbose_name='Краткая информация о партнере')
@@ -36,18 +36,33 @@ class Partners(models.Model):
 class Principles(models.Model):
     """Наши принципы"""
 
-    title = models.CharField(
-                        max_length=350,
+    text = models.TextField(
                         blank=False,
                         unique=True,
                         verbose_name='Описание принципа')
-    comment = models.TextField(
+    image = models.ImageField(
                         blank=True,
-                        verbose_name='Дополнение к принципу')
+                        upload_to='principles_img/',
+                        verbose_name='Картинка к принципу')
 
     class Meta:
         verbose_name = 'Принцип'
         verbose_name_plural = 'Наши принципы'
 
     def __str__(self):
-        return self.title
+        return self.text
+
+class Requisites(models.Model):
+    """Реквизиты организации"""
+
+    text = models.TextField(
+                        blank=False,
+                        unique=True,
+                        verbose_name='Реквизиты организации')
+
+    class Meta:
+        verbose_name = 'Реквизиты'
+        verbose_name_plural = 'Реквизиты организации'
+
+    def __str__(self):
+        return self.text

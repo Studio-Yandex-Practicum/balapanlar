@@ -1,35 +1,48 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Partners, Principles
+from .models import Partners, Principles, Requisites
 
 
 @admin.register(Principles)
 class PrinciplesAdmin(admin.ModelAdmin):
+    fields = ('text', 'image', 'picture')
     list_display = (
-        'title',
-        'comment',
+        'text',
+        'picture',
     )
-    search_fields = ('title',)
-    list_filter = ('title',)    
+    search_fields = ('text',)
+    list_filter = ('text',)
     empty_value_display = '-пусто-'
+    readonly_fields = ('picture',)
+
+    def picture(self, obj):
+        if obj.image != '':
+            return mark_safe(
+                f'<img src="{obj.image.url}" style="max-height: 100px;">')
 
 
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
-    fields = ('name', 'text', 'image', 'logotype', 'url')
+    fields = ('name', 'description', 'image', 'logotype', 'url')
     list_display = (
         'name',
-        'text',
+        'description',
         'logotype',
         'url',
     )
-    list_editable = ('text',)
+    list_editable = ('description',)
     search_fields = ('name',)
     list_filter = ('name',)
-    empty_value_display = '-пусто-'
     readonly_fields = ('logotype',)
 
     def logotype(self, obj):
         return mark_safe(
             f'<img src="{obj.image.url}" style="max-height: 100px;">')
+
+
+@admin.register(Requisites)
+class RequisitesAdmin(admin.ModelAdmin):
+    list_display = (
+        'text',
+    )
