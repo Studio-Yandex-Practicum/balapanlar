@@ -1,11 +1,10 @@
 import uuid
 from collections import namedtuple
 
-from django.db import models
-from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin
-)
+from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
+                                        PermissionsMixin)
 from django.core.validators import RegexValidator
+from django.db import models
 
 VALID_TEXT = r'^[а-яА-ЯёЁa-zA-Z][а-яА-ЯёЁa-zA-Z -]*[а-яА-ЯёЁa-zA-Z]$'
 INVALID_FIELD_MSG = (
@@ -13,9 +12,10 @@ INVALID_FIELD_MSG = (
 )
 INVALID_CODE = 'Неверное значение'
 IS_TEAM_ERROR_MSG = 'Значение "is_team" для суперпользователь должно быть True'
-IS_SUPERUSER_ERROR_MSG = ('Значение "is_superuser" для '
-                          'суперпользователя должно быть True'
-                          )
+IS_SUPERUSER_ERROR_MSG = (
+    'Значение "is_superuser" для '
+    'суперпользователя должно быть True'
+)
 USER_REQUIRED_FIELDS = namedtuple(
     'Feild', 'email password first_name last_name'
 )
@@ -39,7 +39,6 @@ class CustomUserManager(BaseUserManager):
                 raise ValueError(
                     f'Необходимо указать "{invalid_field_value}"'
                 )
-
         email = self.normalize_email(email)
         user = self.model(
             email=email,
@@ -81,6 +80,7 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(
+        'UUID Пользователя',
         primary_key=True,
         default=uuid.uuid4,
         editable=False,
@@ -90,12 +90,15 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         'Электронная почта',
         max_length=255,
         unique=True,
-        help_text='Email пользователя.'
+        help_text='Электронная почта пользователя.'
     )
     password = models.CharField(
+        'Пароль',
         max_length=32,
         blank=False,
-        help_text='Пароль пользователя.'
+        help_text=(
+            'Пароль пользователя длиной не менее 8 символов и не более 32.'
+        )
     )
     first_name = models.CharField(
         'Имя',
@@ -108,7 +111,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
                 code=INVALID_CODE
             ),
         ),
-        help_text='Имя пользователя.'
+        help_text=(
+            'Имя пользователя длиной не более 128 символов. Может содержать '
+            'заглавные и строчные буквы русского и английского '
+            'алфавитов и символ "-".'
+        )
     )
     last_name = models.CharField(
         'Фамилия',
@@ -121,7 +128,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
                 code=INVALID_CODE
             ),
         ),
-        help_text='Фамилия пользователя.'
+        help_text=(
+            'Фамилия пользователя длиной не более 128 символов. '
+            'Может содержать заглавные и строчные буквы русского '
+            'и английского алфавитов и символ "-".'
+        )
     )
     is_team = models.BooleanField(
         'Команда Балапанлар',
@@ -158,7 +169,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         """Returns string string representation of user."""
-        return self.email
+        return (
+            f'Пользователь {self.first_name} {self.last_name}, '
+            f'email: {self.email}'
+        )
 
     def get_full_name(self):
         """Returns full name of user."""
