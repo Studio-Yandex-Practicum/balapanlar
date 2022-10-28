@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 
 from .models import Partners, Principles, Requisites
 
-admin.AdminSite.site_header = 'Администрирование - Баланпалар'
+admin.AdminSite.site_header = 'Администрирование - Балапанлар'
 
 @admin.register(Principles)
 class PrinciplesAdmin(admin.ModelAdmin):
