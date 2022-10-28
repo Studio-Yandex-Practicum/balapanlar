@@ -94,10 +94,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     )
     password = models.CharField(
         'Пароль',
-        max_length=32,
+        max_length=128,
         blank=False,
         help_text=(
-            'Пароль пользователя длиной не менее 8 символов и не более 32.'
+            'Пароль пользователя длиной не менее 8 символов и не более 128.'
         )
     )
     first_name = models.CharField(
@@ -170,7 +170,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """Returns string string representation of user."""
         return (
-            f'Пользователь {self.first_name} {self.last_name}, '
+            f'Пользователь {self.get_full_name()}, '
             f'email: {self.email}'
         )
 

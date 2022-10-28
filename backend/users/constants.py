@@ -9,6 +9,15 @@ VALID_PASSWORD_2_TEST = 'veryhardpassword123'
 VALID_FIRST_NAME_2_TEST = 'UserValid'
 VALID_LAST_NAME_2_TEST = 'Valid-User'
 
+SUPERUSER_EMAIL_TEST = 'admin@admin.com'
+SUPERUSER_PASSWORD_TEST = '$trongpa$$word'
+SUPERUSER_FIRST_NAME_TEST = 'admin-super'
+SUPERUSER_LAST_NAME_TEST = 'super-admin'
+
+
+INVALID_FIRST_NAME_TEST = 'InvalidName11!'
+INVALID_LAST_NAME_TEST = 'InvalidSurname22!'
+
 VERBOSE_NAME_ID_TEST = 'UUID Пользователя'
 HELP_TEXT_ID_TEST = 'Уникальный идентификатор пользователя.'
 
@@ -17,7 +26,7 @@ HELP_TEXT_EMAIL_TEST = 'Электронная почта пользовател
 
 VERBOSE_NAME_PASSWORD_TEST = 'Пароль'
 HELP_TEXT_PASSWORD_TEST = (
-    'Пароль пользователя длиной не менее 8 символов и не более 32.'
+    'Пароль пользователя длиной не менее 8 символов и не более 128.'
 )
 
 VERBOSE_NAME_FIRST_NAME_TEST = 'Имя'
