@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 
 from .models import Partners, Principles, Requisites
 
+admin.AdminSite.site_header = 'Администрирование - Баланпалар'
 
 @admin.register(Principles)
 class PrinciplesAdmin(admin.ModelAdmin):
@@ -20,7 +21,8 @@ class PrinciplesAdmin(admin.ModelAdmin):
         if obj.image != '':
             return mark_safe(
                 f'<img src="{obj.image.url}" style="max-height: 100px;">')
-
+        return 'Картинка ещё не сохранена'
+    picture.short_description = 'Предпросмотр картинки'
 
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
@@ -37,12 +39,27 @@ class PartnersAdmin(admin.ModelAdmin):
     readonly_fields = ('logotype',)
 
     def logotype(self, obj):
-        return mark_safe(
-            f'<img src="{obj.image.url}" style="max-height: 100px;">')
+        if obj.image != '':
+            return mark_safe(
+                f'<img src="{obj.image.url}" style="max-height: 100px;">')
+        return 'Логотип ещё не сохранён'
+    logotype.short_description = 'Предпросмотр логотипа'
 
 
 @admin.register(Requisites)
 class RequisitesAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'text',
     )
+    list_editable = ('text',)
+    
+    def has_add_permission(self, request):
+        """Отключение функции добавить новые реквизиты. 
+           Если необходимо - ../admin/npo_project/requisites/add/"""
+        return "add" in request.path
+
+    def has_delete_permission(self, request, obj=None):
+        """Отключение функции удаления реквизитов. 
+        Необходимо использовать только редактирование"""
+        return False
