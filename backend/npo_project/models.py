@@ -1,5 +1,4 @@
 from django.db import models
-import json
 
 
 class Tag(models.Model):
