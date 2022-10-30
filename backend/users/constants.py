@@ -1,54 +1,93 @@
-# Constants for testing CustomUser model
-VALID_EMAIL_1_TEST = 'valid-email@example.com'
-VALID_PASSWORD_1_TEST = 'testpassword123'
-VALID_FIRST_NAME_1_TEST = 'User'
-VALID_LAST_NAME_1_TEST = 'Valid'
+from enum import Enum
 
-VALID_EMAIL_2_TEST = 'goodemail@example.com'
-VALID_PASSWORD_2_TEST = 'veryhardpassword123'
-VALID_FIRST_NAME_2_TEST = 'UserValid'
-VALID_LAST_NAME_2_TEST = 'Valid-User'
-
-SUPERUSER_EMAIL_TEST = 'admin@admin.com'
-SUPERUSER_PASSWORD_TEST = '$trongpa$$word'
-SUPERUSER_FIRST_NAME_TEST = 'admin-super'
-SUPERUSER_LAST_NAME_TEST = 'super-admin'
+FIRST_NAME = 'Имя'
+LAST_NAME = 'Фамилия'
 
 
-INVALID_FIRST_NAME_TEST = 'InvalidName11!'
-INVALID_LAST_NAME_TEST = 'InvalidSurname22!'
+class TestUser1(str, Enum):
+    """Fields for creating a user for tests.
+    ALl fields are valid.
+    """
+    EMAIL = 'valid-email@example.com'
+    PASSWORD = 'testpassword123'
+    FIRST_NAME = 'User'
+    LAST_NAME = 'Valid'
 
-VERBOSE_NAME_ID_TEST = 'UUID Пользователя'
-HELP_TEXT_ID_TEST = 'Уникальный идентификатор пользователя.'
 
-VERBOSE_NAME_EMAIL_TEST = 'Электронная почта'
-HELP_TEXT_EMAIL_TEST = 'Электронная почта пользователя.'
+class TestUser2(str, Enum):
+    """Fields for creating a user for tests.
+    ALl fields are valid.
+    """
+    EMAIL = 'goodemail@example.com'
+    PASSWORD = 'veryhardpassword123'
+    FIRST_NAME = 'UserValid'
+    LAST_NAME = 'Valid-User'
 
-VERBOSE_NAME_PASSWORD_TEST = 'Пароль'
-HELP_TEXT_PASSWORD_TEST = (
-    'Пароль пользователя длиной не менее 8 символов и не более 128.'
-)
 
-VERBOSE_NAME_FIRST_NAME_TEST = 'Имя'
-HELP_TEXT_FIRST_NAME_TEST = (
-    'Имя пользователя длиной не более 128 символов. Может содержать '
-    'заглавные и строчные буквы русского и английского '
-    'алфавитов и символ "-".'
-)
+class TestUser3(str, Enum):
+    """Fields for creating a user for tests.
+    Valid fields: email, password, last_name.
+    Invalid field: first_name.
+    """
+    EMAIL = 'testuser3@gmail.com'
+    PASSWORD = 'newStrongPa$$'
+    FIRST_NAME = 'InvalidName11!'
+    LAST_NAME = 'UserSurname'
 
-VERBOSE_NAME_LAST_NAME_TEST = 'Фамилия'
-HELP_TEXT_LAST_NAME_TEST = (
-    'Фамилия пользователя длиной не более 128 символов. '
-    'Может содержать заглавные и строчные буквы русского '
-    'и английского алфавитов и символ "-".'
-)
 
-VERBOSE_NAME_TEAM_TEST = 'Команда Балапанлар'
-HELP_TEXT_TEAM_TEST = (
-    'Данное поле указывает на принадлежность'
-    ' пользователя к команде Балапанлар.'
-)
-VERBOSE_NAME_ACTIVE_TEST = 'Аккаунт активен'
-HELP_TEXT_ACTIVE_TEST = (
-    'Данное поле указывает, что аккаунт пользователя "Действующий".'
-)
+class TestUser4(str, Enum):
+    """Fields for creating a user for tests.
+    Valid fields: email, password, first_name.
+    Invalid field: last_name.
+    """
+    EMAIL = 'testuser3@gmail.com'
+    PASSWORD = 'newStrongPa$$'
+    FIRST_NAME = 'UserName'
+    LAST_NAME = 'InvalidSurname22!'
+
+
+class TestSuperUser(str, Enum):
+    """Fields for creating a superuser for tests.
+    All fields are valid.
+    """
+    EMAIL = 'admin@admin.com'
+    PASSWORD = '$trongpa$$word'
+    FIRST_NAME = 'admin-super'
+    LAST_NAME = 'super-admin'
+
+
+class CustomUserVerboseNames(str, Enum):
+    """Expected verbose names for testing fields of CustomUser."""
+    ID = 'UUID Пользователя'
+    EMAIL = 'Электронная почта'
+    PASSWORD = 'Пароль'
+    FIRST_NAME = 'Имя'
+    LAST_NAME = 'Фамилия'
+    IS_TEAM = 'Команда Балапанлар'
+    IS_ACTIVE = 'Аккаунт активен'
+
+
+class CustomUserHelpTexts(str, Enum):
+    """Expected help texts for testing fields of CustomUser."""
+    ID = 'Уникальный идентификатор пользователя.'
+    EMAIL = 'Электронная почта пользователя.'
+    PASSWORD = (
+        'Пароль пользователя длиной не менее 8 символов и не более 128.'
+    )
+    FIRST_NAME = (
+        'Имя пользователя длиной не более 128 символов. Может содержать '
+        'заглавные и строчные буквы русского и английского '
+        'алфавитов и символ "-".'
+    )
+    LAST_NAME = (
+        'Фамилия пользователя длиной не более 128 символов. '
+        'Может содержать заглавные и строчные буквы русского '
+        'и английского алфавитов и символ "-".'
+    )
+    IS_TEAM = (
+        'Данное поле указывает на принадлежность'
+        ' пользователя к команде Балапанлар.'
+    )
+    IS_ACTIVE = (
+        'Данное поле указывает, что аккаунт пользователя "Действующий".'
+    )

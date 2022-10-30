@@ -3,38 +3,23 @@ from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 from django.test import TestCase
 
-from .constants import (HELP_TEXT_ACTIVE_TEST, HELP_TEXT_EMAIL_TEST,
-                        HELP_TEXT_FIRST_NAME_TEST, HELP_TEXT_ID_TEST,
-                        HELP_TEXT_LAST_NAME_TEST, HELP_TEXT_PASSWORD_TEST,
-                        HELP_TEXT_TEAM_TEST, INVALID_FIRST_NAME_TEST,
-                        INVALID_LAST_NAME_TEST, SUPERUSER_EMAIL_TEST,
-                        SUPERUSER_FIRST_NAME_TEST, SUPERUSER_LAST_NAME_TEST,
-                        SUPERUSER_PASSWORD_TEST, VALID_EMAIL_1_TEST,
-                        VALID_EMAIL_2_TEST, VALID_FIRST_NAME_1_TEST,
-                        VALID_FIRST_NAME_2_TEST, VALID_LAST_NAME_1_TEST,
-                        VALID_LAST_NAME_2_TEST, VALID_PASSWORD_1_TEST,
-                        VALID_PASSWORD_2_TEST, VERBOSE_NAME_ACTIVE_TEST,
-                        VERBOSE_NAME_EMAIL_TEST, VERBOSE_NAME_FIRST_NAME_TEST,
-                        VERBOSE_NAME_ID_TEST, VERBOSE_NAME_LAST_NAME_TEST,
-                        VERBOSE_NAME_PASSWORD_TEST, VERBOSE_NAME_TEAM_TEST)
-
+from .constants import (FIRST_NAME, LAST_NAME, CustomUserHelpTexts,
+                        CustomUserVerboseNames, TestSuperUser, TestUser1,
+                        TestUser2, TestUser3, TestUser4)
 from .models import (INVALID_FIELD_MSG, IS_SUPERUSER_ERROR_MSG,
                      IS_TEAM_ERROR_MSG, CustomUser)
-
-FIRST_NAME = 'Имя'
-LAST_NAME = 'Фамилия'
 
 
 class UserModelTest(TestCase):
     @classmethod
     def setUpClass(cls):
-        """Creating of test user in db."""
+        """Creats a test user in db."""
         super().setUpClass()
         cls.user = CustomUser.objects.create(
-            email=VALID_EMAIL_1_TEST,
-            password=VALID_PASSWORD_1_TEST,
-            first_name=VALID_FIRST_NAME_1_TEST,
-            last_name=VALID_LAST_NAME_1_TEST
+            email=TestUser1.EMAIL.value,
+            password=TestUser1.PASSWORD.value,
+            first_name=TestUser1.FIRST_NAME.value,
+            last_name=TestUser1.LAST_NAME.value
         )
 
     @classmethod
@@ -57,17 +42,17 @@ class UserModelTest(TestCase):
         """Test checks user with valid data can be created."""
         users_count = CustomUser.objects.count()
         new_user = CustomUser.objects.create(
-            email=VALID_EMAIL_2_TEST,
-            password=VALID_PASSWORD_2_TEST,
-            first_name=VALID_FIRST_NAME_2_TEST,
-            last_name=VALID_LAST_NAME_2_TEST
+            email=TestUser2.EMAIL.value,
+            password=TestUser2.PASSWORD.value,
+            first_name=TestUser2.FIRST_NAME.value,
+            last_name=TestUser2.LAST_NAME.value
         )
         self.assertEqual(
             CustomUser.objects.count(), users_count + 1
         )
         self.assertTrue(
             CustomUser.objects.filter(
-                email=VALID_EMAIL_2_TEST
+                email=TestUser2.EMAIL.value
             ).exists()
         )
         self.assertTrue(new_user.is_active)
@@ -92,10 +77,10 @@ class UserModelTest(TestCase):
         expected_error_message = INVALID_FIELD_MSG.format(FIRST_NAME)
         with self.assertRaisesMessage(ValidationError, expected_error_message):
             invalid_user = CustomUser(
-                email=VALID_EMAIL_2_TEST,
-                password=VALID_PASSWORD_1_TEST,
-                first_name=INVALID_FIRST_NAME_TEST,
-                last_name=VALID_LAST_NAME_2_TEST
+                email=TestUser3.EMAIL.value,
+                password=TestUser3.PASSWORD.value,
+                first_name=TestUser3.FIRST_NAME.value,
+                last_name=TestUser3.LAST_NAME.value
             )
             invalid_user.clean_fields()
 
@@ -106,10 +91,10 @@ class UserModelTest(TestCase):
         expected_error_message = INVALID_FIELD_MSG.format(LAST_NAME)
         with self.assertRaisesMessage(ValidationError, expected_error_message):
             invalid_user = CustomUser(
-                email=VALID_EMAIL_2_TEST,
-                password=VALID_PASSWORD_1_TEST,
-                first_name=VALID_FIRST_NAME_1_TEST,
-                last_name=INVALID_LAST_NAME_TEST
+                email=TestUser4.EMAIL.value,
+                password=TestUser4.PASSWORD.value,
+                first_name=TestUser4.FIRST_NAME.value,
+                last_name=TestUser4.LAST_NAME.value
             )
             invalid_user.clean_fields()
 
@@ -118,15 +103,17 @@ class UserModelTest(TestCase):
            fields is_team=True, is_superuser=True.
         """
         valid_superuser = CustomUser.objects.create_superuser(
-                email=SUPERUSER_EMAIL_TEST,
-                password=SUPERUSER_PASSWORD_TEST,
-                first_name=SUPERUSER_FIRST_NAME_TEST,
-                last_name=SUPERUSER_LAST_NAME_TEST
+                email=TestSuperUser.EMAIL.value,
+                password=TestSuperUser.PASSWORD.value,
+                first_name=TestSuperUser.FIRST_NAME.value,
+                last_name=TestSuperUser.LAST_NAME.value
         )
         self.assertTrue(valid_superuser.is_team)
         self.assertTrue(valid_superuser.is_superuser)
         self.assertTrue(
-            CustomUser.objects.filter(email=SUPERUSER_EMAIL_TEST).exists()
+            CustomUser.objects.filter(
+                email=TestSuperUser.EMAIL.value
+            ).exists()
         )
 
     def test_superuser_with_is_team_flag_false_raises_error(self):
@@ -136,15 +123,17 @@ class UserModelTest(TestCase):
         """
         with self.assertRaisesMessage(ValueError, IS_TEAM_ERROR_MSG):
             invalid_superuser = CustomUser.objects.create_superuser(
-                email=SUPERUSER_EMAIL_TEST,
-                password=SUPERUSER_PASSWORD_TEST,
-                first_name=SUPERUSER_FIRST_NAME_TEST,
-                last_name=SUPERUSER_LAST_NAME_TEST,
+                email=TestSuperUser.EMAIL.value,
+                password=TestSuperUser.PASSWORD.value,
+                first_name=TestSuperUser.FIRST_NAME.value,
+                last_name=TestSuperUser.LAST_NAME.value,
                 is_team=False
             )
             invalid_superuser.full_clean()
         self.assertFalse(
-            CustomUser.objects.filter(email=SUPERUSER_EMAIL_TEST).exists()
+            CustomUser.objects.filter(
+                email=TestSuperUser.EMAIL.value
+            ).exists()
         )
 
     def test_superuser_with_is_superuser_flag_false_raises_error(self):
@@ -154,51 +143,35 @@ class UserModelTest(TestCase):
         """
         with self.assertRaisesMessage(ValueError, IS_SUPERUSER_ERROR_MSG):
             invalid_superuser = CustomUser.objects.create_superuser(
-                email=SUPERUSER_EMAIL_TEST,
-                password=SUPERUSER_PASSWORD_TEST,
-                first_name=SUPERUSER_FIRST_NAME_TEST,
-                last_name=SUPERUSER_LAST_NAME_TEST,
+                email=TestSuperUser.EMAIL.value,
+                password=TestSuperUser.PASSWORD.value,
+                first_name=TestSuperUser.FIRST_NAME.value,
+                last_name=TestSuperUser.LAST_NAME.value,
                 is_superuser=False
             )
             invalid_superuser.full_clean()
         self.assertFalse(
-            CustomUser.objects.filter(email=SUPERUSER_EMAIL_TEST).exists()
+            CustomUser.objects.filter(
+                email=TestSuperUser.EMAIL.value
+            ).exists()
         )
 
     def test_users_model_correct_verbose_names(self):
         """Test checks CustomUser model fields have correct verbose_names."""
         user = __class__.user
-        valid_verbose_names = {
-            'id': VERBOSE_NAME_ID_TEST,
-            'email': VERBOSE_NAME_EMAIL_TEST,
-            'password': VERBOSE_NAME_PASSWORD_TEST,
-            'first_name': VERBOSE_NAME_FIRST_NAME_TEST,
-            'last_name': VERBOSE_NAME_LAST_NAME_TEST,
-            'is_team': VERBOSE_NAME_TEAM_TEST,
-            'is_active': VERBOSE_NAME_ACTIVE_TEST
-        }
-        for field, expected_value in valid_verbose_names.items():
+        for field in CustomUserVerboseNames:
             with self.subTest(field=field):
                 self.assertEqual(
-                    user._meta.get_field(field).verbose_name,
-                    expected_value
+                    user._meta.get_field(field.name.lower()).verbose_name,
+                    field.value
                 )
 
     def test_users_model_correct_help_texts(self):
         """Test checks CustomUser model fields have correct help_texts."""
         user = __class__.user
-        valid_help_texts = {
-            'id': HELP_TEXT_ID_TEST,
-            'email': HELP_TEXT_EMAIL_TEST,
-            'password': HELP_TEXT_PASSWORD_TEST,
-            'first_name': HELP_TEXT_FIRST_NAME_TEST,
-            'last_name': HELP_TEXT_LAST_NAME_TEST,
-            'is_team': HELP_TEXT_TEAM_TEST,
-            'is_active': HELP_TEXT_ACTIVE_TEST
-        }
-        for field, expected_value in valid_help_texts.items():
-            with self.subTest(field=field):
+        for field in CustomUserHelpTexts:
+            with self.subTest(field=field.name):
                 self.assertEqual(
-                    user._meta.get_field(field).help_text,
-                    expected_value
+                    user._meta.get_field(field.name.lower()).help_text,
+                    field.value
                 )
