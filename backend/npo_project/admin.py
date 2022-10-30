@@ -3,6 +3,8 @@ from django.utils.safestring import mark_safe
 
 from .models import Partners, Principles, Requisites
 
+admin.AdminSite.site_header = 'Администрирование - Балапанлар'
+
 
 @admin.register(Principles)
 class PrinciplesAdmin(admin.ModelAdmin):
@@ -20,6 +22,8 @@ class PrinciplesAdmin(admin.ModelAdmin):
         if obj.image != '':
             return mark_safe(
                 f'<img src="{obj.image.url}" style="max-height: 100px;">')
+        return 'Картинка ещё не сохранена'
+    picture.short_description = 'Предпросмотр картинки'
 
 
 @admin.register(Partners)
@@ -37,12 +41,17 @@ class PartnersAdmin(admin.ModelAdmin):
     readonly_fields = ('logotype',)
 
     def logotype(self, obj):
-        return mark_safe(
-            f'<img src="{obj.image.url}" style="max-height: 100px;">')
+        if obj.image != '':
+            return mark_safe(
+                f'<img src="{obj.image.url}" style="max-height: 100px;">')
+        return 'Логотип ещё не сохранён'
+    logotype.short_description = 'Предпросмотр логотипа'
 
 
 @admin.register(Requisites)
 class RequisitesAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'text',
     )
+    list_editable = ('text',)
