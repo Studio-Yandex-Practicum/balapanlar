@@ -5,6 +5,7 @@ from .models import Partners, Principles, Requisites
 
 admin.AdminSite.site_header = 'Администрирование - Балапанлар'
 
+
 @admin.register(Principles)
 class PrinciplesAdmin(admin.ModelAdmin):
     fields = ('text', 'image', 'picture')
@@ -23,6 +24,7 @@ class PrinciplesAdmin(admin.ModelAdmin):
                 f'<img src="{obj.image.url}" style="max-height: 100px;">')
         return 'Картинка ещё не сохранена'
     picture.short_description = 'Предпросмотр картинки'
+
 
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
@@ -53,13 +55,3 @@ class RequisitesAdmin(admin.ModelAdmin):
         'text',
     )
     list_editable = ('text',)
-    
-    def has_add_permission(self, request):
-        """Отключение функции добавить новые реквизиты. 
-           Если необходимо - ../admin/npo_project/requisites/add/"""
-        return "add" in request.path
-
-    def has_delete_permission(self, request, obj=None):
-        """Отключение функции удаления реквизитов. 
-        Необходимо использовать только редактирование"""
-        return False
