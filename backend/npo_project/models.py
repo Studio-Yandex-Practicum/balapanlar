@@ -22,7 +22,7 @@ class Course(models.Model):
     duration = models.CharField('Длительность курса', max_length=40)
     description = models.TextField('Описание')
     tags = models.ManyToManyField(Tag)
-    skills = models.CharField('Какие умения даст курс',max_length=200)
+    skills = models.CharField('Какие умения даст курс', max_length=200)
 
     class Meta:
         verbose_name = "Курс"

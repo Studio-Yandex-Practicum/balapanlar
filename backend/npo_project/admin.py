@@ -10,6 +10,8 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'category', 'age_groups', 'duration', 'description', 'skills')
+    list_display = ('id', 'name', 'category', 'age_groups',
+                    'duration', 'description', 'skills')
     search_fields = ('name',)
-    list_editable = ('category', 'age_groups', 'duration', 'description', 'skills')
+    list_editable = ('category', 'age_groups',
+                     'duration', 'description', 'skills')
