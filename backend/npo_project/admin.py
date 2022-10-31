@@ -1,9 +1,25 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Partners, Principles, Requisites
+from .models import (Course, Tag, Partners, Principles, Requisites)
+
 
 admin.AdminSite.site_header = 'Администрирование - Балапанлар'
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    search_fields = ('name',)
+
+
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'category', 'age_groups',
+                    'duration', 'description', 'skills')
+    search_fields = ('name',)
+    list_editable = ('category', 'age_groups',
+                     'duration', 'description', 'skills')
 
 
 @admin.register(Principles)
@@ -55,3 +71,4 @@ class RequisitesAdmin(admin.ModelAdmin):
         'text',
     )
     list_editable = ('text',)
+>>>>>>> 2c9697604f2753e7fcf9cfbae3504d3c44e1390d
