@@ -20,7 +20,7 @@ USER_REQUIRED_FIELDS = namedtuple(
     'Feild', 'email password first_name last_name'
 )
 RUSSIA_EQUIVALENTS = USER_REQUIRED_FIELDS(
-    'Email адрес', 'Пароль', 'Имя', 'Фамилию'
+    'Адрес электронной почты', 'Пароль', 'Имя', 'Фамилию'
 )
 
 
@@ -80,20 +80,20 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(
-        'UUID Пользователя',
+        'uuid пользователя',
         primary_key=True,
         default=uuid.uuid4,
         editable=False,
         help_text='Уникальный идентификатор пользователя.'
     )
     email = models.EmailField(
-        'Электронная почта',
+        'электронная почта',
         max_length=255,
         unique=True,
         help_text='Электронная почта пользователя.'
     )
     password = models.CharField(
-        'Пароль',
+        'пароль',
         max_length=128,
         blank=False,
         help_text=(
@@ -101,7 +101,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         )
     )
     first_name = models.CharField(
-        'Имя',
+        'имя',
         max_length=128,
         blank=False,
         validators=(
@@ -118,7 +118,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         )
     )
     last_name = models.CharField(
-        'Фамилия',
+        'фамилия',
         max_length=128,
         blank=False,
         validators=(
@@ -135,15 +135,15 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         )
     )
     is_team = models.BooleanField(
-        'Команда Балапанлар',
+        'команда Балапанлар',
         default=False,
         help_text=(
-            'Данное поле указывает на принадлежность'
-            ' пользователя к команде Балапанлар.'
+            'Данное поле указывает на принадлежность пользователя '
+            'к команде Балапанлар.'
         )
     )
     is_active = models.BooleanField(
-        'Аккаунт активен',
+        'аккаунт активен',
         default=True,
         help_text=(
             'Данное поле указывает, что аккаунт пользователя "Действующий".'
@@ -158,8 +158,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = 'custom_user'
         ordering = ('email',)
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
+        verbose_name = 'пользователь'
+        verbose_name_plural = 'пользователи'
         constraints = (
             models.UniqueConstraint(
                 fields=('email', 'first_name', 'last_name'),
@@ -180,5 +180,5 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     @property
     def is_staff(self):
-        "Returns is the user a member of team."
+        """Returns is the user a member of team."""
         return self.is_team

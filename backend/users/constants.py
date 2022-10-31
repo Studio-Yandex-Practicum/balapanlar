@@ -58,13 +58,13 @@ class TestSuperUser(str, Enum):
 
 class CustomUserVerboseNames(str, Enum):
     """Expected verbose names for testing fields of CustomUser."""
-    ID = 'UUID Пользователя'
-    EMAIL = 'Электронная почта'
-    PASSWORD = 'Пароль'
-    FIRST_NAME = 'Имя'
-    LAST_NAME = 'Фамилия'
-    IS_TEAM = 'Команда Балапанлар'
-    IS_ACTIVE = 'Аккаунт активен'
+    ID = 'uuid пользователя'
+    EMAIL = 'электронная почта'
+    PASSWORD = 'пароль'
+    FIRST_NAME = 'имя'
+    LAST_NAME = 'фамилия'
+    IS_TEAM = 'команда Балапанлар'
+    IS_ACTIVE = 'аккаунт активен'
 
 
 class CustomUserHelpTexts(str, Enum):
