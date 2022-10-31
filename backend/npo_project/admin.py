@@ -1,6 +1,10 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 
-from .models import (Course, Tag)
+from .models import (Course, Tag, Partners, Principles, Requisites)
+
+
+admin.AdminSite.site_header = 'Администрирование - Балапанлар'
 
 
 @admin.register(Tag)
@@ -16,14 +20,6 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_editable = ('category', 'age_groups',
                      'duration', 'description', 'skills')
-
-
-
-from django.utils.safestring import mark_safe
-
-from .models import Partners, Principles, Requisites
-
-admin.AdminSite.site_header = 'Администрирование - Балапанлар'
 
 
 @admin.register(Principles)
