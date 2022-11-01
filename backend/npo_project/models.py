@@ -31,7 +31,7 @@ class TeamMember(BaseModel):
 class Benefit(BaseModel):
     class RoleChoices(models.TextChoices):
         CHILD = 'CHILD', _('ребенку')
-        PARENT = 'PARENT', _('родятелям')
+        PARENT = 'PARENT', _('родителям')
 
     text = models.TextField('Причина')
     beneficial_to = models.CharField(
