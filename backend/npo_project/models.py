@@ -10,7 +10,7 @@ class FAQ(models.Model):
                             max_length=100)
     answer = models.TextField(
                             verbose_name='Ответ',
-                            max_length=1000)
+                            max_length=1500)
 
     class Meta:
         verbose_name = 'Вопросы'
