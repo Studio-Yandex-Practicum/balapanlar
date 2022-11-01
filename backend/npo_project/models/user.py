@@ -25,6 +25,9 @@ RUSSIA_EQUIVALENTS = USER_REQUIRED_FIELDS(
 
 
 class CustomUserManager(BaseUserManager):
+    """Manager for CustomUser model"""
+    use_in_migrations = True
+
     def _create_user(
         self, email, first_name, last_name, password, **extra_fields
     ):
@@ -79,6 +82,7 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
+    """Model for CustomUser."""
     id = models.UUIDField(
         'uuid пользователя',
         primary_key=True,
@@ -170,7 +174,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """Returns string string representation of user."""
         return (
-            f'Пользователь {self.get_full_name()}, '
+            f'Пользователь: {self.get_full_name()}, '
             f'email: {self.email}'
         )
 

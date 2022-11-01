@@ -9,12 +9,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'npo_project.CustomUser'
 
 # Application definition
 INSTALLED_APPS = [
     'npo_project.apps.NpoProjectConfig',
-    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -6,11 +6,11 @@ from django.test import TestCase
 from .constants import (FIRST_NAME, LAST_NAME, CustomUserHelpTexts,
                         CustomUserVerboseNames, TestSuperUser, TestUser1,
                         TestUser2, TestUser3, TestUser4)
-from .models import (INVALID_FIELD_MSG, IS_SUPERUSER_ERROR_MSG,
-                     IS_TEAM_ERROR_MSG, CustomUser)
+from npo_project.models.user import (INVALID_FIELD_MSG, IS_SUPERUSER_ERROR_MSG,
+                                     IS_TEAM_ERROR_MSG, CustomUser)
 
 
-class UserModelTest(TestCase):
+class CustomUserModelTest(TestCase):
     @classmethod
     def setUpClass(cls):
         """Creates a test user in db."""
@@ -32,7 +32,7 @@ class UserModelTest(TestCase):
         """CustomUser Model's method __str__ works correct."""
         user_str_method = __class__.user.__str__()
         expected_output = (
-            f'Пользователь {self.user.first_name} '
+            f'Пользователь: {self.user.first_name} '
             f'{self.user.last_name}, '
             f'email: {self.user.email}'
         )
