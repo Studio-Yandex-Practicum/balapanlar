@@ -7,10 +7,10 @@ User = get_user_model()
 class FAQ(models.Model):
     question = models.TextField(
                             verbose_name='Вопрос',
-                            max_length=50)
+                            max_length=100)
     answer = models.TextField(
                             verbose_name='Ответ',
-                            max_length=50)
+                            max_length=1000)
 
     class Meta:
         verbose_name = 'Вопросы'
@@ -24,7 +24,7 @@ class FAQ(models.Model):
 class Location(models.Model):
     adress = models.TextField(
                             verbose_name='Адрес',
-                            max_length=50)
+                            max_length=100)
     image = models.ImageField(
                         blank=False,
                         upload_to='location_img/',
