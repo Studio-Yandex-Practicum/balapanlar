@@ -84,6 +84,8 @@ class TeamMemberAdmin(admin.ModelAdmin):
                 f'width="{image.width}" height="{image.height}">'
             )
         return ''
+    preview.allow_tags = True
+    preview.short_description = 'Предпросмотр'
 
 
 @admin.register(Benefit)
