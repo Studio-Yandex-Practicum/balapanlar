@@ -7,6 +7,7 @@ class FAQAdmin(admin.ModelAdmin):
     list_display = ('question', 'answer')
     search_fields = ('question',)
 
+
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('adress', 'image')
