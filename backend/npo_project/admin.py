@@ -71,4 +71,3 @@ class RequisitesAdmin(admin.ModelAdmin):
         'text',
     )
     list_editable = ('text',)
->>>>>>> 2c9697604f2753e7fcf9cfbae3504d3c44e1390d

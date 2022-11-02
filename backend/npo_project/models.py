@@ -103,4 +103,3 @@ class Requisites(models.Model):
 
     def __str__(self):
         return self.text
->>>>>>> 2c9697604f2753e7fcf9cfbae3504d3c44e1390d
