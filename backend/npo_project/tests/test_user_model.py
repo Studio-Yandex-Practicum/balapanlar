@@ -111,10 +111,10 @@ class CustomUserModelTest(TestCase):
         is_superuser=True.
         """
         valid_superuser = CustomUser.objects.create_superuser(
-                email=TestSuperUser.EMAIL.value,
-                password=TestSuperUser.PASSWORD.value,
-                first_name=TestSuperUser.FIRST_NAME.value,
-                last_name=TestSuperUser.LAST_NAME.value
+            email=TestSuperUser.EMAIL.value,
+            password=TestSuperUser.PASSWORD.value,
+            first_name=TestSuperUser.FIRST_NAME.value,
+            last_name=TestSuperUser.LAST_NAME.value
         )
         self.assertIs(valid_superuser.is_team, True)
         self.assertIs(valid_superuser.is_superuser, True)
