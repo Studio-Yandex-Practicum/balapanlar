@@ -1,11 +1,5 @@
 from django.contrib import admin
-from .models import FAQ, Location
-
-
-@admin.register(FAQ)
-class FAQAdmin(admin.ModelAdmin):
-    list_display = ('question', 'answer')
-    search_fields = ('question',)
+from ..models import Location
 
 
 @admin.register(Location)
