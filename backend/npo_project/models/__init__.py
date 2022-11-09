@@ -1,4 +1,5 @@
+from .course_price import (     # noqa
+    CoursePrice, IncludedInCoursePrice,
+    NotIncludedInCoursePrice)
 from .program import Program, ProgramCharacteristic  # noqa
-from .course_price import (IncludedInCoursePrice,  # noqa
-                           NotIncludedInCoursePrice,
-                           CoursePrice)
+from .user import CustomUser  # noqa

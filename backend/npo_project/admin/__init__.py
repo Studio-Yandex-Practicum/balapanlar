@@ -1,6 +1,6 @@
-from .program_admin import ProgramAdmin, ProgramCharacteristicAdmin  # noqa
 from .course_price_admin import (  # noqa
-    IncludedInCoursePriceAdmin,
+    CoursePriceAdmin, IncludedInCoursePriceAdmin,
     NotIncludedInCoursePriceAdmin,
-    CoursePriceAdmin
 )
+from .program_admin import ProgramAdmin, ProgramCharacteristicAdmin  # noqa
+from .user_admin import CustomUserAdmin  # noqa
