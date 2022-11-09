@@ -3,9 +3,8 @@ from django.contrib import admin
 from django.utils.html import format_html
 from sorl.thumbnail import get_thumbnail
 
+from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
 from models import TeamMember
-
-EMPTY = '-пусто-'
 
 
 class TeamRoleWidget(forms.MultiWidget):
@@ -69,7 +68,7 @@ class TeamMemberAdminForm(forms.ModelForm):
 class TeamMemberAdmin(admin.ModelAdmin):
     form = TeamMemberAdminForm
     list_display = ('name', 'role', 'preview',)
-    empty_value_display = EMPTY
+    empty_value_display = EMPTY_VALUE_ADMIN_PANEL
     list_filter = ('role',)
     search_fields = ('name',)
     readonly_fields = ('preview',)

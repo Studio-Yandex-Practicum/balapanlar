@@ -2,15 +2,14 @@ from django.contrib import admin
 from django.utils.html import format_html
 from sorl.thumbnail import get_thumbnail
 
+from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
 from models import Benefit
-
-EMPTY = '-пусто-'
 
 
 @admin.register(Benefit)
 class BenefitAdmin(admin.ModelAdmin):
     list_display = ('text', 'beneficial_to', 'preview')
-    empty_value_display = EMPTY
+    empty_value_display = EMPTY_VALUE_ADMIN_PANEL
     list_filter = ('beneficial_to',)
     search_fields = ('text',)
     readonly_fields = ('preview',)
