@@ -6,3 +6,4 @@ from ..models import FAQ
 class FAQAdmin(admin.ModelAdmin):
     list_display = ('question', 'answer')
     search_fields = ('question',)
+ 
