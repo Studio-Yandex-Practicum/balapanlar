@@ -13,6 +13,7 @@ develop-eggs/
 dist/
 downloads/
 eggs/
+migrations
 .eggs/
 lib/
 lib64/
@@ -132,3 +133,6 @@ media/
 
 # vscode
 .vscode
+
+.migrations/
+.media/
