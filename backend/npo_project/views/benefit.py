@@ -2,12 +2,14 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
+from ..filters import BenefitFilter
 from ..models import Benefit
 from ..serializers import BenefitSerializer, BenefitRoleSerializer
 
 
 class BenefitViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Benefit.objects.all()
+    filterset_class = BenefitFilter
 
     def get_serializer_class(self):
         if 'for_' in self.request.get_full_path():
