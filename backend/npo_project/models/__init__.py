@@ -3,5 +3,5 @@ from .course_price import (     # noqa
     NotIncludedInCoursePrice)
 from .program import Program, ProgramCharacteristic  # noqa
 from .user import CustomUser  # noqa
-from .FAQ import FAQ
-from .Location import Location
+from .FAQ import FAQ # noqa
+from .Location import Location # noqa
