@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import (Course, Tag, Partners, Principles, Requisites)
+from .models import (Partners, Principles, Requisites)
 
 
 admin.AdminSite.site_header = 'Администрирование - Балапанлар'
