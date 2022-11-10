@@ -13,13 +13,13 @@ AUTH_USER_MODEL = 'npo_project.CustomUser'
 
 # Application definition
 INSTALLED_APPS = [
-    'npo_project.apps.NpoProjectConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'npo_project.apps.NpoProjectConfig',
     'sorl.thumbnail',
 ]
 
