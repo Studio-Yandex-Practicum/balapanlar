@@ -7,4 +7,4 @@ from team_member import TeamMember  # noqa
 from .user import CustomUser  # noqa
 from .FAQ import FAQ # noqa
 from .Location import Location # noqa
-from .cource_tags import Course, Tag
+from .cource_tags import Course, Tag # noqa
