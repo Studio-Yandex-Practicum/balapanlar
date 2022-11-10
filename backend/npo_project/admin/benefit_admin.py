@@ -3,7 +3,7 @@ from django.utils.html import format_html
 from sorl.thumbnail import get_thumbnail
 
 from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
-from models import Benefit
+from ..models import Benefit
 
 
 @admin.register(Benefit)

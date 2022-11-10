@@ -4,7 +4,7 @@ from django.utils.html import format_html
 from sorl.thumbnail import get_thumbnail
 
 from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
-from models import TeamMember
+from ..models import TeamMember
 
 
 class TeamRoleWidget(forms.MultiWidget):
