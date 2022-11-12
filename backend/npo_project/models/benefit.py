@@ -1,10 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from core.models import BaseModel
 
-
-class Benefit(BaseModel):
+class Benefit(models.Model):
     class RoleChoices(models.TextChoices):
         CHILD = 'CHILD', _('ребенку')
         PARENT = 'PARENT', _('родителям')

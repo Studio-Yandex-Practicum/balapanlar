@@ -1,9 +1,7 @@
 from django.db import models
 
-from core.models import BaseModel
 
-
-class TeamMember(BaseModel):
+class TeamMember(models.Model):
     name = models.CharField(
         'Имя участника команды',
         help_text='Введите имя, которое будет отображаться на сайте',
