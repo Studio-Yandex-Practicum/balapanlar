@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Course, Tag
+from ..models import Course, Tag
 
 
 @admin.register(Tag)
@@ -14,5 +14,4 @@ class CourseAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'category', 'age_groups',
                     'duration', 'description', 'skills')
     search_fields = ('name',)
-    list_editable = ('category', 'age_groups',
-                     'duration', 'description', 'skills')
+    list_editable = ('category', 'age_groups',)
