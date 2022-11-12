@@ -6,3 +6,4 @@ from .program_admin import ProgramAdmin, ProgramCharacteristicAdmin  # noqa
 from .user_admin import CustomUserAdmin  # noqa
 from .FAQ_admin import FAQAdmin # noqa
 from .Location_admin import LocationAdmin # noqa
+from .course_tag import CourseAdmin, TagAdmin # noqa
