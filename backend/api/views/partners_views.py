@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
-from ..models import Partners
+from npo_project.models import Partners
 from ..serializers import PartnersSerializer
 
 

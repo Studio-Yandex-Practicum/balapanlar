@@ -1,5 +1,5 @@
-from benefit import Benefit  # noqa
-from team_member import TeamMember  # noqa
+from .benefit import Benefit  # noqa
+from .team_member import TeamMember  # noqa
 
 from .cource_tags import Course, Tag  # noqa
 from .course_price import (  # noqa

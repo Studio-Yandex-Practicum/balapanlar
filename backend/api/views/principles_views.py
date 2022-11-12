@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
-from ..models import Principles
+from npo_project.models import Principles
 from ..serializers import PrinciplesSerializer
 
 
