@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'npo_project.apps.NpoProjectConfig',
     'sorl.thumbnail',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

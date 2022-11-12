@@ -1,10 +1,14 @@
 from benefit import Benefit  # noqa
-from .course_price import (     # noqa
-    CoursePrice, IncludedInCoursePrice,
-    NotIncludedInCoursePrice)
-from .program import Program, ProgramCharacteristic  # noqa
 from team_member import TeamMember  # noqa
+
+from .cource_tags import Course, Tag  # noqa
+from .course_price import (  # noqa
+    CoursePrice, IncludedInCoursePrice, NotIncludedInCoursePrice,
+)
+from .FAQ import FAQ  # noqa
+from .Location import Location  # noqa
+from .partners import Partners  # noqa
+from .principles import Principles  # noqa
+from .program import Program, ProgramCharacteristic  # noqa
+from .requisites import Requisites  # noqa
 from .user import CustomUser  # noqa
-from .FAQ import FAQ # noqa
-from .Location import Location # noqa
-from .cource_tags import Course, Tag # noqa
