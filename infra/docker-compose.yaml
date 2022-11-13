@@ -6,7 +6,7 @@ services:
       context: ../frontend
       dockerfile: Dockerfile
     volumes:
-      - frontend_build:/app/result_build/
+      - frontend_build:/app/result_build/dist
     container_name: 'frontend'
 
   nginx:
