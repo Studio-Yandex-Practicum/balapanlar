@@ -3,7 +3,6 @@ from django.utils.safestring import mark_safe
 
 from ..models import Partners
 
-
 admin.AdminSite.site_header = 'Администрирование - Балапанлар'
 
 
