@@ -1,9 +1,22 @@
-from benefit import Benefit  # noqa
-from .course_price import (     # noqa
+from .benefit import Benefit
+from .course_price import (
     CoursePrice, IncludedInCoursePrice,
     NotIncludedInCoursePrice)
-from .program import Program, ProgramCharacteristic  # noqa
-from team_member import TeamMember  # noqa
-from .user import CustomUser  # noqa
-from .FAQ import FAQ # noqa
-from .Location import Location # noqa
+from .program import Program, ProgramCharacteristic
+from .team_member import TeamMember
+from .user import CustomUser
+from .FAQ import FAQ
+from .Location import Location
+
+__all__ = [
+    Benefit,
+    CoursePrice,
+    CustomUser,
+    FAQ,
+    IncludedInCoursePrice,
+    Location,
+    NotIncludedInCoursePrice,
+    Program,
+    ProgramCharacteristic,
+    TeamMember
+]
