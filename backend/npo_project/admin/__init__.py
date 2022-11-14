@@ -1,19 +1,29 @@
 from .course_price_admin import (
-    CoursePriceAdmin, IncludedInCoursePriceAdmin,
+    CoursePriceAdmin,
+    IncludedInCoursePriceAdmin,
     NotIncludedInCoursePriceAdmin,
 )
+from .course_tag_admin import CourseAdmin, TagAdmin
+from .faq_admin import FAQAdmin
+from .location_admin import LocationAdmin
+from .partners_admin import PartnersAdmin
+from .principles_admin import PrinciplesAdmin
 from .program_admin import ProgramAdmin, ProgramCharacteristicAdmin
+from .requisites_admin import RequisitesAdmin
 from .user_admin import CustomUserAdmin
-from .FAQ_admin import FAQAdmin
-from .Location_admin import LocationAdmin
 
 __all__ = [
-    CoursePriceAdmin,
-    CustomUserAdmin,
-    FAQAdmin,
-    IncludedInCoursePriceAdmin,
-    LocationAdmin,
-    NotIncludedInCoursePriceAdmin,
-    ProgramAdmin,
-    ProgramCharacteristicAdmin,
+    'CourseAdmin',
+    'CoursePriceAdmin',
+    'CustomUserAdmin',
+    'FAQAdmin',
+    'IncludedInCoursePriceAdmin',
+    'LocationAdmin',
+    'NotIncludedInCoursePriceAdmin',
+    'PartnersAdmin',
+    'PrinciplesAdmin',
+    'ProgramAdmin',
+    'ProgramCharacteristicAdmin',
+    'RequisitesAdmin',
+    'TagAdmin',
 ]
