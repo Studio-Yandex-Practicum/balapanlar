@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'npo_project.apps.NpoProjectConfig',
+    'api.apps.ApiConfig',
     'sorl.thumbnail',
 ]
 
