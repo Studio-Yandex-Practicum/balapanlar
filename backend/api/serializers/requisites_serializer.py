@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import Requisites
+from npo_project.models import Requisites
 
 
 class RequisitesSerializer(serializers.ModelSerializer):

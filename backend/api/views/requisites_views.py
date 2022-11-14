@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
-from ..models import Requisites
+from npo_project.models import Requisites
 from ..serializers import RequisitesSerializer
 
 

@@ -13,7 +13,6 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-migrations
 .eggs/
 lib/
 lib64/
@@ -131,8 +130,6 @@ dmypy.json
 media/
 .idea/
 
-# vscode
-.vscode
-
-.migrations/
-.media/
+# .idea
+.idea
+.vscode/

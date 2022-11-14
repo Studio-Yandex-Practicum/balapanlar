@@ -1,7 +1,7 @@
 from drf_extra_fields.fields import Base64ImageField
 from rest_framework import serializers
 
-from ..models import Partners
+from npo_project.models import Partners
 
 
 class PartnersSerializer(serializers.ModelSerializer):
