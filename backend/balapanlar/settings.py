@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'npo_project.apps.NpoProjectConfig',
     'sorl.thumbnail',
     'rest_framework',
 ]

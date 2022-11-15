@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from .views import (
+    BenefitViewSet,
     CoursePriceViewSet,
     IncludedInCoursePriceViewSet,
     NotIncludedInCoursePriceViewSet,
@@ -9,7 +10,8 @@ from .views import (
     PrinciplesViewSet,
     ProgramViewSet,
     ProgramCharacteristicViewSet,
-    RequisitesViewSet
+    RequisitesViewSet,
+    TeamMemberViewSet
 )
 
 app_name = 'api'
@@ -17,6 +19,7 @@ app_name = 'api'
 router_v1 = DefaultRouter()
 
 
+router_v1.register('benefits', BenefitViewSet, basename='benefits')
 router_v1.register('partners', PartnersViewSet, basename='partners')
 router_v1.register('principles', PrinciplesViewSet, basename='principles')
 router_v1.register('requisites', RequisitesViewSet, basename='requisites')
@@ -30,6 +33,7 @@ router_v1.register('included_in_course_price', IncludedInCoursePriceViewSet,
 router_v1.register('not_included_in_course_price',
                    NotIncludedInCoursePriceViewSet,
                    basename='not_included_in_course_price')
+router_v1.register('team_members', TeamMemberViewSet, basename='team_members')
 
 urlpatterns = [
     path('v1/', include(router_v1.urls)),
