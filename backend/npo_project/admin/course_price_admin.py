@@ -6,17 +6,15 @@ from ..models import (IncludedInCoursePrice, NotIncludedInCoursePrice,
 
 @admin.register(CoursePrice)
 class CoursePriceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'price', 'payment_url')
-    list_editable = ('price', 'payment_url',)
+    list_display = ('price', 'payment_url')
+    list_editable = ('payment_url',)
 
 
 @admin.register(IncludedInCoursePrice)
 class IncludedInCoursePriceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text')
-    list_editable = ('text',)
+    list_display = ('text',)
 
 
 @admin.register(NotIncludedInCoursePrice)
 class NotIncludedInCoursePriceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text')
-    list_editable = ('text',)
+    list_display = ('text',)
