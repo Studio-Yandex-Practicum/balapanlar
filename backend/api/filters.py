@@ -1,6 +1,6 @@
 from django_filters import ChoiceFilter, FilterSet
 
-from .models import Benefit
+from npo_project.models import Benefit
 
 
 class BenefitFilter(FilterSet):

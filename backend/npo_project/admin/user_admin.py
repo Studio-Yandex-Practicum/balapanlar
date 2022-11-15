@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
+from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
 from npo_project.forms import CustomUserChangeForm, CustomUserCreationForm
 from ..models import CustomUser
-from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
 
 
 @admin.register(CustomUser)
