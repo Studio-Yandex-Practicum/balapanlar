@@ -11,14 +11,15 @@ from .requisites_serializer import RequisitesSerializer
 from .team_member_serializer import TeamMemberSerializer
 
 __all__ = [
-    BenefitRoleSerializer, BenefitSerializer,
-    CoursePriceSerializer,
-    IncludedInCoursePriceSerializer,
-    NotIncludedInCoursePriceSerializer,
-    PartnersSerializer,
-    PrinciplesSerializer,
-    ProgramSerializer,
-    ProgramCharacteristicSerializer,
-    RequisitesSerializer,
-    TeamMemberSerializer
+    'BenefitRoleSerializer',
+    'BenefitSerializer',
+    'CoursePriceSerializer',
+    'IncludedInCoursePriceSerializer',
+    'NotIncludedInCoursePriceSerializer',
+    'PartnersSerializer',
+    'PrinciplesSerializer',
+    'ProgramSerializer',
+    'ProgramCharacteristicSerializer',
+    'RequisitesSerializer',
+    'TeamMemberSerializer'
 ]

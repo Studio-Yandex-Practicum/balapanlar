@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
+from ..forms import TeamMemberAdminForm
 from ..models import TeamMember
 
 
@@ -51,18 +52,6 @@ class TeamRoleWidget(forms.MultiWidget):
                 and (input_value, input_value) not in self.get_roles()):
             return input_value
         return choice_value
-
-
-class TeamMemberAdminForm(forms.ModelForm):
-    role = forms.CharField(
-        label='Роль в команде',
-        widget=TeamRoleWidget,
-        help_text='Выберите из списка или введите новое значение'
-    )
-
-    class Meta:
-        model = TeamMember
-        fields = ('name', 'role', 'image')
 
 
 @admin.register(TeamMember)

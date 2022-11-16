@@ -2,9 +2,22 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 
-from .models import CustomUser
+from admin.team_member_admin import TeamRoleWidget
+from .models import CustomUser, TeamMember
 
 PASSWORDS_ERROR_MSG = 'Пароли не совпадают'
+
+
+class TeamMemberAdminForm(forms.ModelForm):
+    role = forms.CharField(
+        label='Роль в команде',
+        widget=TeamRoleWidget,
+        help_text='Выберите из списка или введите новое значение'
+    )
+
+    class Meta:
+        model = TeamMember
+        fields = ('name', 'role', 'image')
 
 
 class CustomUserCreationForm(forms.ModelForm):

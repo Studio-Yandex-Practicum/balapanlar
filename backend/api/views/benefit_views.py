@@ -2,9 +2,9 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from ..filters import BenefitFilter
 from npo_project.models import Benefit
-from serializers import BenefitSerializer, BenefitRoleSerializer
+from ..filters import BenefitFilter
+from ..serializers import BenefitRoleSerializer, BenefitSerializer
 
 
 class BenefitViewSet(viewsets.ReadOnlyModelViewSet):
