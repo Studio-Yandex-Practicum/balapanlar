@@ -13,8 +13,8 @@ AUTH_USER_MODEL = 'npo_project.CustomUser'
 
 # Application definition
 INSTALLED_APPS = [
-    'api.apps.ApiConfig',
     'npo_project.apps.NpoProjectConfig',
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -22,9 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'npo_project.apps.NpoProjectConfig',
     'sorl.thumbnail',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [
