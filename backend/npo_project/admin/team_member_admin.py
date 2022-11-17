@@ -5,7 +5,6 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 from balapanlar.settings import EMPTY_VALUE_ADMIN_PANEL
-from ..forms import TeamMemberAdminForm
 from ..models import TeamMember
 
 
@@ -26,14 +25,17 @@ class TeamRoleWidget(forms.MultiWidget):
         super().__init__(self.widgets, attrs)
 
     def get_roles(self):
-        roles = set(
-            [
-                (
-                    i.get('role'), i.get('role')
-                ) for i in TeamMember.objects.all().values('role')
-            ]
-        )
-        return sorted(self.DEFAULT_ROLES.union(roles))
+        try:
+            roles = set(
+                [
+                    (
+                        i.get('role'), i.get('role')
+                    ) for i in TeamMember.objects.all().values('role')
+                ]
+            )
+            return sorted(self.DEFAULT_ROLES.union(roles))
+        except Exception:
+            return sorted(self.DEFAULT_ROLES)
 
     def update(self, **kwargs):
         self.__init__(**kwargs)
@@ -52,6 +54,18 @@ class TeamRoleWidget(forms.MultiWidget):
                 and (input_value, input_value) not in self.get_roles()):
             return input_value
         return choice_value
+
+
+class TeamMemberAdminForm(forms.ModelForm):
+    role = forms.CharField(
+        label='Роль в команде',
+        widget=TeamRoleWidget,
+        help_text='Выберите из списка или введите новое значение'
+    )
+
+    class Meta:
+        model = TeamMember
+        fields = ('name', 'role', 'image')
 
 
 @admin.register(TeamMember)
