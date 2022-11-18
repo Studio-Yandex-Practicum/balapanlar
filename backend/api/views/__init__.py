@@ -11,14 +11,14 @@ from .team_member_views import TeamMemberViewSet
 
 
 __all__ = [
-    BenefitViewSet,
-    CoursePriceViewSet,
-    IncludedInCoursePriceViewSet,
-    NotIncludedInCoursePriceViewSet,
-    PartnersViewSet,
-    PrinciplesViewSet,
-    ProgramViewSet,
-    ProgramCharacteristicViewSet,
-    RequisitesViewSet,
-    TeamMemberViewSet
+    'BenefitViewSet',
+    'CoursePriceViewSet',
+    'IncludedInCoursePriceViewSet',
+    'NotIncludedInCoursePriceViewSet',
+    'PartnersViewSet',
+    'PrinciplesViewSet',
+    'ProgramViewSet',
+    'ProgramCharacteristicViewSet',
+    'RequisitesViewSet',
+    'TeamMemberViewSet'
 ]
