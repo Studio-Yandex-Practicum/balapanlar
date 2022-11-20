@@ -30,6 +30,5 @@ __all__ = [
     'Program',
     'ProgramCharacteristic',
     'Requisites',
-    'Tag',
-    'TeamMember'
+    'TeamMember',
 ]
