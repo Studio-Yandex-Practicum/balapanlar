@@ -1,4 +1,5 @@
 from .benefit_serializer import BenefitRoleSerializer, BenefitSerializer
+from .course_serializer import CourseSerializer
 from .course_price_serializer import (
     CoursePriceSerializer, IncludedInCoursePriceSerializer,
     NotIncludedInCoursePriceSerializer
@@ -13,6 +14,7 @@ from .team_member_serializer import TeamMemberSerializer
 __all__ = [
     'BenefitRoleSerializer',
     'BenefitSerializer',
+    'CourseSerializer',
     'CoursePriceSerializer',
     'IncludedInCoursePriceSerializer',
     'NotIncludedInCoursePriceSerializer',
