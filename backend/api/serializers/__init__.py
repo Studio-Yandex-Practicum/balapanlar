@@ -1,5 +1,5 @@
 from .benefit_serializer import BenefitRoleSerializer, BenefitSerializer
-from .course_serializer import CourseSerializer
+from .course_serializer import CourseSerializer, CourseTagSerializer
 from .course_price_serializer import (
     CoursePriceSerializer, IncludedInCoursePriceSerializer,
     NotIncludedInCoursePriceSerializer
@@ -16,6 +16,7 @@ __all__ = [
     'BenefitSerializer',
     'CourseSerializer',
     'CoursePriceSerializer',
+    'CourseTagSerializer',
     'IncludedInCoursePriceSerializer',
     'NotIncludedInCoursePriceSerializer',
     'PartnersSerializer',
