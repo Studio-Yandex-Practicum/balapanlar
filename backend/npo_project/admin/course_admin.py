@@ -32,8 +32,8 @@ class CourseCategoryAdmin(HiddenAdmin):
 
 
 @admin.register(CourseTag)
-class CourseTagAdmin(HiddenAdmin):
-    pass
+class CourseTagAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
 
 class CourseAdminForm(forms.ModelForm):
