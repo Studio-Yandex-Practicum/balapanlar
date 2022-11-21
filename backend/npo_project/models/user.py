@@ -25,7 +25,7 @@ RUSSIA_EQUIVALENTS = USER_REQUIRED_FIELDS(
 
 
 class CustomUserManager(BaseUserManager):
-    """Manager for CustomUser model"""
+    """Manager for CustomUser model."""
     use_in_migrations = True
 
     def _create_user(

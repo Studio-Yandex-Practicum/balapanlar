@@ -25,14 +25,17 @@ class TeamRoleWidget(forms.MultiWidget):
         super().__init__(self.widgets, attrs)
 
     def get_roles(self):
-        roles = set(
-            [
-                (
-                    i.get('role'), i.get('role')
-                ) for i in TeamMember.objects.all().values('role')
-            ]
-        )
-        return sorted(self.DEFAULT_ROLES.union(roles))
+        try:
+            roles = set(
+                [
+                    (
+                        i.get('role'), i.get('role')
+                    ) for i in TeamMember.objects.all().values('role')
+                ]
+            )
+            return sorted(self.DEFAULT_ROLES.union(roles))
+        except Exception:
+            return sorted(self.DEFAULT_ROLES)
 
     def update(self, **kwargs):
         self.__init__(**kwargs)

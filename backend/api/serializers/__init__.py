@@ -1,5 +1,28 @@
-from .partners_serializer import PartnersSerializer  # noqa
-from .principles_serializer import PrinciplesSerializer  # noqa
-from .requisites_serializer import RequisitesSerializer  # noqa
-from .location_serializer import LocationSerializer  # noqa
-from .FAQ_serializer import FAQSerializer  # noqa
+from .benefit_serializer import BenefitRoleSerializer, BenefitSerializer
+from .course_price_serializer import (
+    CoursePriceSerializer, IncludedInCoursePriceSerializer,
+    NotIncludedInCoursePriceSerializer
+)
+from .partners_serializer import PartnersSerializer
+from .principles_serializer import PrinciplesSerializer
+from .program_serializer import (
+    ProgramSerializer, ProgramCharacteristicSerializer)
+from .requisites_serializer import RequisitesSerializer
+from .team_member_serializer import TeamMemberSerializer
+from .location_serializer import LocationSerializer
+from .FAQ_serializer import FAQSerializer
+__all__ = [
+    'BenefitRoleSerializer',
+    'BenefitSerializer',
+    'CoursePriceSerializer',
+    'IncludedInCoursePriceSerializer',
+    'NotIncludedInCoursePriceSerializer',
+    'PartnersSerializer',
+    'PrinciplesSerializer',
+    'ProgramSerializer',
+    'ProgramCharacteristicSerializer',
+    'RequisitesSerializer',
+    'TeamMemberSerializer',
+    'LocationSerializer',
+    'FAQSerializer'
+]

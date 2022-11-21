@@ -1,3 +1,4 @@
+from .benefit_admin import BenefitAdmin
 from .course_price_admin import (
     CoursePriceAdmin,
     IncludedInCoursePriceAdmin,
@@ -10,9 +11,11 @@ from .partners_admin import PartnersAdmin
 from .principles_admin import PrinciplesAdmin
 from .program_admin import ProgramAdmin, ProgramCharacteristicAdmin
 from .requisites_admin import RequisitesAdmin
+from .team_member_admin import TeamMemberAdmin
 from .user_admin import CustomUserAdmin
 
 __all__ = [
+    'BenefitAdmin',
     'CourseAdmin',
     'CoursePriceAdmin',
     'CustomUserAdmin',
@@ -26,4 +29,5 @@ __all__ = [
     'ProgramCharacteristicAdmin',
     'RequisitesAdmin',
     'TagAdmin',
+    'TeamMemberAdmin'
 ]
