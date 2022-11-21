@@ -2,19 +2,24 @@ from django.db import models
 
 
 class TeamMember(models.Model):
-    """Участники команды, раздел 'Команда'"""
+    """Участники команды, раздел 'Команда'."""
     name = models.CharField(
         'Имя участника команды',
-        help_text='Введите имя, которое будет отображаться на сайте',
+        help_text='Введите имя, которое будет отображаться на сайте. '
+                  'Например, "Бэлла Шахмирза"',
         max_length=100,
         unique=True
     )
     role = models.CharField(
         'Роль в команде',
         max_length=100,
-        help_text='Например, "администратор" или "куратор".'
+        help_text='Например, "администратор" или "куратор"'
     )
-    image = models.ImageField('Фотография', upload_to='team_members/')
+    image = models.ImageField(
+        'Фотография',
+        upload_to='team_members/',
+        help_text='Добавьте фотография участника команды'
+    )
 
     class Meta:
         verbose_name = 'Участник команды'

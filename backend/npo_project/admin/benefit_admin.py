@@ -26,4 +26,4 @@ class BenefitAdmin(admin.ModelAdmin):
             )
         return ''
     preview.allow_tags = True
-    preview.short_description = 'Предпросмотр'
+    preview.short_description = 'Предпросмотр загруженной фотографии'
