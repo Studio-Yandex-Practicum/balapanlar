@@ -60,7 +60,7 @@ class TeamMemberAdminForm(forms.ModelForm):
     role = forms.CharField(
         label='Роль в команде',
         widget=TeamRoleWidget,
-        help_text='Выберите из списка. Если подходящего нета - '
+        help_text='Выберите из списка. Если подходящего нет - '
                   'введите новое значение.'
     )
 
