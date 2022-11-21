@@ -11,6 +11,11 @@ class CourseCategory(models.Model):
         'название категории', max_length=100, unique=True,
         help_text='Например, "Программирование" или "Иностранные языки"'
     )
+    description = models.TextField(
+        'описание категории', blank=True, null=True,
+        help_text='Например, "Наши курсы программирования созданы '
+                  'в международной школе «Алгоритмика»..."'
+    )
 
     class Meta:
         verbose_name = 'категория курса'
