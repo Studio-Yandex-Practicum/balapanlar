@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from ..filters import BenefitFilter
 from npo_project.models import Benefit
-from serializers import BenefitSerializer, BenefitRoleSerializer
+from ..serializers import BenefitSerializer, BenefitRoleSerializer
 
 
 class BenefitViewSet(viewsets.ReadOnlyModelViewSet):
