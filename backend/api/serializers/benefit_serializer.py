@@ -9,10 +9,9 @@ class BenefitSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Benefit
-        exclude = ('id',)
 
 
 class BenefitRoleSerializer(BenefitSerializer):
 
     class Meta(BenefitSerializer.Meta):
-        exclude = ('id', 'beneficial_to',)
+        exclude = ('beneficial_to',)
