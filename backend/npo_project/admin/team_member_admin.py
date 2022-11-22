@@ -66,13 +66,13 @@ class TeamMemberAdminForm(forms.ModelForm):
 
     class Meta:
         model = TeamMember
-        fields = ('name', 'role', 'image')
+        exclude = ('id', 'full_name')
 
 
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
     form = TeamMemberAdminForm
-    list_display = ('name', 'role', 'preview',)
+    list_display = ('full_name', 'role', 'preview',)
     empty_value_display = EMPTY_VALUE_ADMIN_PANEL
     list_filter = ('role',)
     search_fields = ('name',)
