@@ -1,7 +1,8 @@
 asgiref==3.5.2
 Django==3.2.16
-djangorestframework==3.14.0
 django-filter==22.1
+django-tinymce==3.5.0
+djangorestframework==3.14.0
 drf_extra_fields==3.4.1
 gunicorn==20.0.4
 Pillow==9.2.0

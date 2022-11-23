@@ -1,4 +1,5 @@
 from .benefit_views import BenefitViewSet
+from .course_views import CourseViewSet
 from .course_price_view import (
     CoursePriceViewSet, IncludedInCoursePriceViewSet,
     NotIncludedInCoursePriceViewSet
@@ -12,6 +13,7 @@ from .team_member_views import TeamMemberViewSet
 
 __all__ = [
     'BenefitViewSet',
+    'CourseViewSet',
     'CoursePriceViewSet',
     'IncludedInCoursePriceViewSet',
     'NotIncludedInCoursePriceViewSet',

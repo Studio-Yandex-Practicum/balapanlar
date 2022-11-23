@@ -1,5 +1,5 @@
 from .benefit import Benefit
-from .cource_tags import Course, Tag
+from .course import Course, CourseCategory, CourseTag
 from .course_price import (
     CoursePrice,
     IncludedInCoursePrice,
@@ -17,7 +17,9 @@ from .user import CustomUser
 __all__ = [
     'Benefit',
     'Course',
+    'CourseCategory',
     'CoursePrice',
+    'CourseTag',
     'CustomUser',
     'FAQ',
     'IncludedInCoursePrice',
@@ -28,6 +30,5 @@ __all__ = [
     'Program',
     'ProgramCharacteristic',
     'Requisites',
-    'Tag',
-    'TeamMember'
+    'TeamMember',
 ]

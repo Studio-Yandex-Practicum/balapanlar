@@ -3,6 +3,7 @@ from rest_framework.routers import DefaultRouter
 
 from .views import (
     BenefitViewSet,
+    CourseViewSet,
     CoursePriceViewSet,
     IncludedInCoursePriceViewSet,
     NotIncludedInCoursePriceViewSet,
@@ -34,6 +35,7 @@ router_v1.register('not_included_in_course_price',
                    NotIncludedInCoursePriceViewSet,
                    basename='not_included_in_course_price')
 router_v1.register('team_members', TeamMemberViewSet, basename='team_members')
+router_v1.register('courses', CourseViewSet, basename='courses')
 
 urlpatterns = [
     path('v1/', include(router_v1.urls)),
