@@ -87,6 +87,6 @@ class TeamMemberAdmin(admin.ModelAdmin):
                 f'<img src="{image.url}" '
                 f'width="{image.width}" height="{image.height}">'
             )
-        return ''
+        return 'Фотография еще не сохранена'
     preview.allow_tags = True
     preview.short_description = 'Предпросмотр загруженной фотографии'

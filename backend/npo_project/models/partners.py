@@ -1,9 +1,8 @@
 from django.db import models
 
 
-class Partners(models.Model):
-    """Наши партнеры"""
-
+class Partner(models.Model):
+    """Model Partner, site section 'Partners'."""
     name = models.CharField(
         'название партнера',
         max_length=350,
@@ -41,4 +40,4 @@ class Partners(models.Model):
         ]
 
     def __str__(self):
-        return self.name
+        return f'{self.name[:30]}...'

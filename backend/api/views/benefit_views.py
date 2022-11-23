@@ -16,13 +16,13 @@ class BenefitViewSet(viewsets.ReadOnlyModelViewSet):
             return BenefitRoleSerializer
         return BenefitSerializer
 
-    @action(methods=["get", ], detail=False)
+    @action(methods=('get',), detail=False)
     def for_children(self, request):
         beneficial_to = self.queryset.filter(beneficial_to='CHILD')
         serializer = self.get_serializer(beneficial_to, many=True)
         return Response(serializer.data)
 
-    @action(methods=["get", ], detail=False)
+    @action(methods=('get',), detail=False)
     def for_parents(self, request):
         beneficial_to = self.queryset.filter(beneficial_to='PARENT')
         serializer = self.get_serializer(beneficial_to, many=True)

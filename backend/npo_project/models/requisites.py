@@ -1,9 +1,8 @@
 from django.db import models
 
 
-class Requisites(models.Model):
-    """Реквизиты организации"""
-
+class Requisite(models.Model):
+    """Model Requisite, site section 'Requisites'."""
     text = models.TextField(
         'реквизиты организации',
         blank=False,
@@ -16,4 +15,4 @@ class Requisites(models.Model):
         db_table = 'requisites'
 
     def __str__(self):
-        return self.text
+        return f'Реквизиты: {self.text[:30]}...'

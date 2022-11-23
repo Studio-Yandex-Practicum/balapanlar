@@ -3,28 +3,25 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Benefit(models.Model):
-    """
-    Описания разделов 'Почему вашему ребёнку понравится у нас?' и
-    'Почему это удобно родителям?'
-    """
+    """Model Benefit, site section 'Why is it good for parents?'."""
     class RoleChoices(models.TextChoices):
         CHILD = 'CHILD', _('ребенку')
         PARENT = 'PARENT', _('родителям')
 
     text = models.TextField(
-        'Причина',
+        'причина',
         help_text='Например, "Участие в конкурсах и олимпиадах" или '
                   '"Для вашего ребёнка у нас всегда есть чай, вода и снэки"'
     )
     beneficial_to = models.CharField(
-        'Кому понравится',
+        'кому понравится',
         choices=RoleChoices.choices,
         max_length=10,
         help_text='Выберите раздел: "Почему вашему ребёнку понравится у нас?"'
                   ' или "Почему это удобно родителям?"'
     )
     image = models.ImageField(
-        'Фотография',
+        'фотография',
         upload_to='benefits/',
         help_text='Можете добавить фотографию',
         blank=True,
@@ -32,10 +29,10 @@ class Benefit(models.Model):
     )
 
     class Meta:
-        verbose_name = 'Причина выбора курсов родителями / детьми'
-        verbose_name_plural = 'Причины выбора курсов родителями / детьми'
+        verbose_name = 'причина выбора курсов родителями / детьми'
+        verbose_name_plural = 'причины выбора курсов родителями / детьми'
         db_table = 'benefit'
 
     def __str__(self):
         role = getattr(self.RoleChoices, self.beneficial_to).label
-        return f'{role.capitalize()}: {self.text[:50]}'
+        return f'{role.capitalize()}: {self.text[:30]}...'

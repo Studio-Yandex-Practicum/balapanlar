@@ -1,9 +1,9 @@
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework import viewsets
 
-from npo_project.models import Requisites
+from npo_project.models import Requisite
 from ..serializers import RequisitesSerializer
 
 
-class RequisitesViewSet(ReadOnlyModelViewSet):
-    queryset = Requisites.objects.all()
+class RequisitesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Requisite.objects.all()
     serializer_class = RequisitesSerializer

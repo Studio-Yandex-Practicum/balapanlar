@@ -7,12 +7,13 @@ from django.db import models
 
 
 class CourseCategory(models.Model):
+    """Model CourseCategory, site section 'Our Courses'."""
     name = models.CharField(
         'название категории', max_length=100, unique=True,
         help_text='Например, "Программирование" или "Иностранные языки"'
     )
     description = models.TextField(
-        'описание категории', blank=True, null=True,
+        'описание категории', blank=True,
         help_text='Например, "Наши курсы программирования созданы '
                   'в международной школе «Алгоритмика»..."'
     )
@@ -23,10 +24,11 @@ class CourseCategory(models.Model):
         db_table = 'course_category'
 
     def __str__(self):
-        return str(self.name)
+        return f'Категория курса: {self.name[:30]}...'
 
 
 class CourseTag(models.Model):
+    """Model CourseTag, site section 'Our Courses'."""
     name = models.CharField(
         'текст тэга', max_length=100, unique=True,
         help_text='Например, "язык Python" или "изучение культуры"'
@@ -38,10 +40,11 @@ class CourseTag(models.Model):
         db_table = 'course_tag'
 
     def __str__(self):
-        return str(self.name)
+        return f'Тэг курса: {self.name[:30]}...'
 
 
 class Course(models.Model):
+    """Model Course, site section 'Our Courses'."""
     name = models.CharField(
         'название', max_length=100, unique=True,
         help_text='Например, "Python Start"'
@@ -76,7 +79,7 @@ class Course(models.Model):
                   'с помощью зелёного плюсика.'
     )
     skills = models.TextField(
-        'какие умения даст курс', blank=True, null=True,
+        'какие умения даст курс', blank=True,
         help_text='(необязательное поле) По желанию напишите список умений, '
                   'которые учащиеся приобретут по окончании курса.',
     )
@@ -87,4 +90,4 @@ class Course(models.Model):
         db_table = 'course'
 
     def __str__(self):
-        return str(self.name)
+        return f'Курс: {self.name[:30]}...'

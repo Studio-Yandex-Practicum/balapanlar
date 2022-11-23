@@ -9,4 +9,4 @@ class LocationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Location
-        fields = ['adress', 'image']
+        fields = ('id', 'address', 'image')

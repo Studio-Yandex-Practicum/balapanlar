@@ -7,14 +7,14 @@ from .course_price import (
 )
 from .faq import FAQ
 from .location import Location
-from .partners import Partners
-from .principles import Principles
+from .partners import Partner
+from .principles import Principle
 from .program import Program, ProgramCharacteristic
-from .requisites import Requisites
+from .requisites import Requisite
 from .team_member import TeamMember
 from .user import CustomUser
 
-__all__ = [
+__all__ = (
     'Benefit',
     'Course',
     'CourseCategory',
@@ -25,10 +25,10 @@ __all__ = [
     'IncludedInCoursePrice',
     'Location',
     'NotIncludedInCoursePrice',
-    'Partners',
-    'Principles',
+    'Partner',
+    'Principle',
     'Program',
     'ProgramCharacteristic',
-    'Requisites',
-    'TeamMember',
-]
+    'Requisite',
+    'TeamMember'
+)
