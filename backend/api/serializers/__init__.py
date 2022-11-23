@@ -10,7 +10,8 @@ from .program_serializer import (
     ProgramSerializer, ProgramCharacteristicSerializer)
 from .requisites_serializer import RequisitesSerializer
 from .team_member_serializer import TeamMemberSerializer
-
+from .location_serializer import LocationSerializer
+from .FAQ_serializer import FAQSerializer
 __all__ = [
     'BenefitRoleSerializer',
     'BenefitSerializer',
@@ -24,5 +25,7 @@ __all__ = [
     'ProgramSerializer',
     'ProgramCharacteristicSerializer',
     'RequisitesSerializer',
-    'TeamMemberSerializer'
+    'TeamMemberSerializer',
+    'LocationSerializer',
+    'FAQSerializer'
 ]

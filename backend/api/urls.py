@@ -12,7 +12,9 @@ from .views import (
     ProgramViewSet,
     ProgramCharacteristicViewSet,
     RequisitesViewSet,
-    TeamMemberViewSet
+    TeamMemberViewSet,
+    LocationViewSet,
+    FAQViewSet,
 )
 
 app_name = 'api'
@@ -21,6 +23,8 @@ router_v1 = DefaultRouter()
 
 
 router_v1.register('benefits', BenefitViewSet, basename='benefits')
+router_v1.register('question', FAQViewSet, basename='question')
+router_v1.register('locations', LocationViewSet, basename='locations')
 router_v1.register('partners', PartnersViewSet, basename='partners')
 router_v1.register('principles', PrinciplesViewSet, basename='principles')
 router_v1.register('requisites', RequisitesViewSet, basename='requisites')

@@ -9,7 +9,8 @@ from .principles_views import PrinciplesViewSet
 from .program_view import ProgramViewSet, ProgramCharacteristicViewSet
 from .requisites_views import RequisitesViewSet
 from .team_member_views import TeamMemberViewSet
-
+from .location_views import LocationViewSet
+from .FAQ_views import FAQViewSet
 
 __all__ = [
     'BenefitViewSet',
@@ -22,5 +23,7 @@ __all__ = [
     'ProgramViewSet',
     'ProgramCharacteristicViewSet',
     'RequisitesViewSet',
-    'TeamMemberViewSet'
+    'TeamMemberViewSet',
+    'FAQViewSet',
+    'LocationViewSet'
 ]
