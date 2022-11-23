@@ -60,18 +60,19 @@ class TeamMemberAdminForm(forms.ModelForm):
     role = forms.CharField(
         label='Роль в команде',
         widget=TeamRoleWidget,
-        help_text='Выберите из списка или введите новое значение'
+        help_text='Выберите из списка. Если подходящего нет - '
+                  'введите новое значение.'
     )
 
     class Meta:
         model = TeamMember
-        fields = ('name', 'role', 'image')
+        exclude = ('id', 'full_name')
 
 
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
     form = TeamMemberAdminForm
-    list_display = ('name', 'role', 'preview',)
+    list_display = ('full_name', 'role', 'preview',)
     empty_value_display = EMPTY_VALUE_ADMIN_PANEL
     list_filter = ('role',)
     search_fields = ('name',)
@@ -88,4 +89,4 @@ class TeamMemberAdmin(admin.ModelAdmin):
             )
         return ''
     preview.allow_tags = True
-    preview.short_description = 'Предпросмотр'
+    preview.short_description = 'Предпросмотр загруженной фотографии'
