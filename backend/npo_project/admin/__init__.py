@@ -1,3 +1,5 @@
+from django.contrib import admin
+
 from .benefit_admin import BenefitAdmin
 from .course_price_admin import (
     CoursePriceAdmin,
@@ -31,3 +33,5 @@ __all__ = [
     'RequisitesAdmin',
     'TeamMemberAdmin'
 ]
+
+admin.AdminSite.site_header = 'Администрирование - Балапанлар'

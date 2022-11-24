@@ -1,5 +1,7 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class FAQ(models.Model):
     """Model FAQ, site section 'FAQ'."""
@@ -19,4 +21,4 @@ class FAQ(models.Model):
         verbose_name_plural = 'часто задаваемые вопросы'
 
     def __str__(self):
-        return f'Вопрос: {self.question[:30]}...'
+        return f'Вопрос: {self.question[:TEXT_CUT_VALUE]}...'

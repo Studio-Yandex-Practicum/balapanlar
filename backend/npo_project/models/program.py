@@ -1,5 +1,7 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class Program(models.Model):
     """Model Program, site section 'About Us'."""
@@ -32,7 +34,7 @@ class Program(models.Model):
         db_table = 'program'
 
     def __str__(self):
-        return f'{self.name[:30]}...'
+        return f'{self.name[:TEXT_CUT_VALUE]}...'
 
 
 class ProgramCharacteristic(models.Model):
@@ -48,4 +50,4 @@ class ProgramCharacteristic(models.Model):
         db_table = 'program_сharacteristic'
 
     def __str__(self):
-        return f'{self.text[:30]}...'
+        return f'{self.text[:TEXT_CUT_VALUE]}...'

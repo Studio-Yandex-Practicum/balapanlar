@@ -1,5 +1,7 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class Partner(models.Model):
     """Model Partner, site section 'Partners'."""
@@ -40,4 +42,4 @@ class Partner(models.Model):
         ]
 
     def __str__(self):
-        return f'{self.name[:30]}...'
+        return f'{self.name[:TEXT_CUT_VALUE]}...'

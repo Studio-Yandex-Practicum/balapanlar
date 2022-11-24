@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class Benefit(models.Model):
     """Model Benefit, site section 'Why is it good for parents?'."""
@@ -35,4 +37,4 @@ class Benefit(models.Model):
 
     def __str__(self):
         role = getattr(self.RoleChoices, self.beneficial_to).label
-        return f'{role.capitalize()}: {self.text[:30]}...'
+        return f'{role.capitalize()}: {self.text[:TEXT_CUT_VALUE]}...'

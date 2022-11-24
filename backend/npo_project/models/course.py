@@ -5,6 +5,8 @@ CourseCategory, CourseTag.
 
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class CourseCategory(models.Model):
     """Model CourseCategory, site section 'Our Courses'."""
@@ -24,7 +26,7 @@ class CourseCategory(models.Model):
         db_table = 'course_category'
 
     def __str__(self):
-        return f'Категория курса: {self.name[:30]}...'
+        return f'Категория курса: {self.name[:TEXT_CUT_VALUE]}...'
 
 
 class CourseTag(models.Model):
@@ -40,7 +42,7 @@ class CourseTag(models.Model):
         db_table = 'course_tag'
 
     def __str__(self):
-        return f'Тэг курса: {self.name[:30]}...'
+        return f'Тэг курса: {self.name[:TEXT_CUT_VALUE]}...'
 
 
 class Course(models.Model):
@@ -90,4 +92,4 @@ class Course(models.Model):
         db_table = 'course'
 
     def __str__(self):
-        return f'Курс: {self.name[:30]}...'
+        return f'Курс: {self.name[:TEXT_CUT_VALUE]}...'

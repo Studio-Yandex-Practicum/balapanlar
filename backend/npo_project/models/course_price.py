@@ -1,5 +1,7 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class CoursePrice(models.Model):
     """Model CoursePrice, site section 'Our Courses'."""
@@ -27,7 +29,7 @@ class CoursePrice(models.Model):
         db_table = 'course_price'
 
     def __str__(self):
-        return f'{self.price[:30]}...'
+        return f'{self.price[:TEXT_CUT_VALUE]}...'
 
 
 class IncludedInCoursePrice(models.Model):
@@ -43,7 +45,7 @@ class IncludedInCoursePrice(models.Model):
         db_table = 'included_in_course_price'
 
     def __str__(self):
-        return f'{self.text[:30]}...'
+        return f'{self.text[:TEXT_CUT_VALUE]}...'
 
 
 class NotIncludedInCoursePrice(models.Model):
@@ -59,4 +61,4 @@ class NotIncludedInCoursePrice(models.Model):
         db_table = 'not_included_in_course_price'
 
     def __str__(self):
-        return f'{self.text[:30]}...'
+        return f'{self.text[:TEXT_CUT_VALUE]}...'

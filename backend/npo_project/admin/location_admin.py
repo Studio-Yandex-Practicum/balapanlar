@@ -5,5 +5,5 @@ from ..models import Location
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ('address', 'image')
+    list_display = ('address',)
     search_fields = ('address',)

@@ -1,18 +1,16 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class Location(models.Model):
     """Model Location, site section 'How to find us?'."""
     address = models.TextField(
         'адрес',
         max_length=100,
-        help_text='Укажите текущий адрес для отображения на сайте'
-    )
-    image = models.ImageField(
-        'карта',
-        blank=False,
-        upload_to='location_img/',
-        help_text='Тут можно вставить карту (скриншот например)'
+        help_text='Укажите текущий адрес для отображения на сайте. '
+                  'Например: Адрес «УЯ»: аул Икон-Халк, ул. Ленина 175, '
+                  'ТЦ «Каскад», 2 этаж'
     )
 
     class Meta:
@@ -20,4 +18,4 @@ class Location(models.Model):
         verbose_name_plural = 'адреса'
 
     def __str__(self):
-        return f'Адрес: {self.address[:30]}...'
+        return f'Адрес: {self.address[:TEXT_CUT_VALUE]}...'
