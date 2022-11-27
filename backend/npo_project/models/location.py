@@ -5,8 +5,8 @@ from balapanlar.settings import TEXT_CUT_VALUE
 
 class Location(models.Model):
     """Model Location, site section 'How to find us?'."""
-    address_for_center = models.CharField(
-        'адрес для центра',
+    center_name = models.CharField(
+        'название центра',
         max_length=50,
         blank=False,
         help_text='Пример заполнения данного поля: Адрес «УЯ»'
