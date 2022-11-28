@@ -50,8 +50,8 @@ class TeamRoleWidget(forms.MultiWidget):
         choice_value, input_value = super().value_from_datadict(
             data, files, name
         )
-        if (input_value.split()
-                and (input_value, input_value) not in self.get_roles()):
+        if (input_value.split() and (input_value, input_value)
+                not in self.get_roles()):
             return input_value
         return choice_value
 
