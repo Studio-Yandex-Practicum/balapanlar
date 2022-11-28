@@ -4,7 +4,7 @@ from .course_price_admin import (
     IncludedInCoursePriceAdmin,
     NotIncludedInCoursePriceAdmin,
 )
-from .course_tag_admin import CourseAdmin, TagAdmin
+from .course_admin import CourseAdmin, CourseTagAdmin
 from .faq_admin import FAQAdmin
 from .location_admin import LocationAdmin
 from .partners_admin import PartnersAdmin
@@ -18,6 +18,7 @@ __all__ = [
     'BenefitAdmin',
     'CourseAdmin',
     'CoursePriceAdmin',
+    'CourseTagAdmin',
     'CustomUserAdmin',
     'FAQAdmin',
     'IncludedInCoursePriceAdmin',
@@ -28,6 +29,5 @@ __all__ = [
     'ProgramAdmin',
     'ProgramCharacteristicAdmin',
     'RequisitesAdmin',
-    'TagAdmin',
     'TeamMemberAdmin'
 ]

@@ -9,4 +9,4 @@ class TeamMemberSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TeamMember
-        exclude = ('id',)
+        fields = '__all__'

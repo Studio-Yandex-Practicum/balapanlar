@@ -38,6 +38,7 @@ urlpatterns = [
         schema_view.with_ui('redoc', cache_timeout=0),
         name='schema-redoc'
     ),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 if settings.DEBUG:
