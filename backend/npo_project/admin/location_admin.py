@@ -9,6 +9,7 @@ class LocationForm(forms.ModelForm):
         model = Location
         exclude = ('id', 'latitude', 'longitude')
 
+
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     form = LocationForm
