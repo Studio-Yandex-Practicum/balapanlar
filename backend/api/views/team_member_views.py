@@ -16,7 +16,7 @@ from ..serializers import TeamMemberSerializer
 class TeamMemberViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Раздел "Команда"
-    
+
     ---
     """
     queryset = TeamMember.objects.all()

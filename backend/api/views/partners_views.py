@@ -16,7 +16,7 @@ from ..serializers import PartnersSerializer
 class PartnersViewSet(ReadOnlyModelViewSet):
     """
     Раздел "Наши партнеры"
-    
+
     ---
     """
     queryset = Partners.objects.all()

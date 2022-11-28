@@ -18,7 +18,7 @@ from ..serializers import (
 class ProgramViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Раздел "О нас"
-    
+
     ---
     """
     queryset = Program.objects.all()
@@ -34,7 +34,7 @@ class ProgramViewSet(viewsets.ReadOnlyModelViewSet):
 class ProgramCharacteristicViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Характеристики карточек раздела "О нас"
-    
+
     ---
     """
     queryset = ProgramCharacteristic.objects.all()

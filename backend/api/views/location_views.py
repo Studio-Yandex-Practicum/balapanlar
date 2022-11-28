@@ -16,7 +16,7 @@ from ..serializers import LocationSerializer
 class LocationViewSet(ReadOnlyModelViewSet):
     """
     Раздел "Как нас найти"
-    
+
     ---
     """
     queryset = Location.objects.all()

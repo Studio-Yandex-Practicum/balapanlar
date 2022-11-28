@@ -16,7 +16,7 @@ from ..serializers import PrinciplesSerializer
 class PrinciplesViewSet(ReadOnlyModelViewSet):
     """
     Раздел "Наши принципы"
-    
+
     ---
     """
     queryset = Principles.objects.all()

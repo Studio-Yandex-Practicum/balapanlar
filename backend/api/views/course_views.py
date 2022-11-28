@@ -16,7 +16,7 @@ from ..serializers import CourseSerializer
 class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Раздел "Наши курсы"
-    
+
     ---
     """
     queryset = Course.objects.all()

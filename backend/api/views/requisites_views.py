@@ -16,7 +16,7 @@ from ..serializers import RequisitesSerializer
 class RequisitesViewSet(ReadOnlyModelViewSet):
     """
     Данные организации: реквизиты
-    
+
     ---
     """
     queryset = Requisites.objects.all()

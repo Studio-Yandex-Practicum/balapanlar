@@ -16,7 +16,7 @@ from ..serializers import FAQSerializer
 class FAQViewSet(ReadOnlyModelViewSet):
     """
     Раздел "Часто задаваемые вопросы"
-    
+
     ---
     """
     queryset = FAQ.objects.all()

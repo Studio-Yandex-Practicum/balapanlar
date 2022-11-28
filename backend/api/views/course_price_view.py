@@ -21,7 +21,7 @@ from ..serializers import (
 class IncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Что включено в стоимость
-    
+
     ---
     """
     queryset = IncludedInCoursePrice.objects.all()
@@ -37,7 +37,7 @@ class IncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
 class NotIncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Что не включено в стоимость
-    
+
     ---
     """
     queryset = NotIncludedInCoursePrice.objects.all()
@@ -53,7 +53,7 @@ class NotIncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
 class CoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Раздел "Стоимость курсов"
-    
+
     ---
     """
     queryset = CoursePrice.objects.all()
