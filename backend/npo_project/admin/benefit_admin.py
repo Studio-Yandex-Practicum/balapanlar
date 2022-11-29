@@ -24,6 +24,6 @@ class BenefitAdmin(admin.ModelAdmin):
                 f'<img src="{image.url}" '
                 f'width="{image.width}" height="{image.height}">'
             )
-        return ''
+        return 'Картинка еще не сохранена'
     preview.allow_tags = True
     preview.short_description = 'Предпросмотр загруженной фотографии'

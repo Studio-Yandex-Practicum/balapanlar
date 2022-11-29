@@ -1,9 +1,9 @@
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework import viewsets
 
-from npo_project.models import Partners
+from npo_project.models import Partner
 from ..serializers import PartnersSerializer
 
 
-class PartnersViewSet(ReadOnlyModelViewSet):
-    queryset = Partners.objects.all()
+class PartnersViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Partner.objects.all()
     serializer_class = PartnersSerializer
