@@ -50,8 +50,8 @@ class TeamRoleWidget(forms.MultiWidget):
         choice_value, input_value = super().value_from_datadict(
             data, files, name
         )
-        if (input_value.split()
-                and (input_value, input_value) not in self.get_roles()):
+        if (input_value.split() and (input_value, input_value)
+                not in self.get_roles()):
             return input_value
         return choice_value
 
@@ -87,6 +87,6 @@ class TeamMemberAdmin(admin.ModelAdmin):
                 f'<img src="{image.url}" '
                 f'width="{image.width}" height="{image.height}">'
             )
-        return ''
+        return 'Фотография еще не сохранена'
     preview.allow_tags = True
     preview.short_description = 'Предпросмотр загруженной фотографии'

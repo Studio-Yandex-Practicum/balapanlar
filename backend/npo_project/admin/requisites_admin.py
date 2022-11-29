@@ -1,12 +1,9 @@
 from django.contrib import admin
 
-from ..models import Requisites
+from ..models import Requisite
 
 
-@admin.register(Requisites)
+@admin.register(Requisite)
 class RequisitesAdmin(admin.ModelAdmin):
-    list_display = (
-        'id',
-        'text',
-    )
-    list_editable = ('text',)
+    list_display = ('text',)
+    list_display_links = ('text',)

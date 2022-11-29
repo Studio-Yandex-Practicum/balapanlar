@@ -1,9 +1,10 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
 
-class Partners(models.Model):
-    """Наши партнеры"""
 
+class Partner(models.Model):
+    """Model Partner, site section 'Partners'."""
     name = models.CharField(
         'название партнера',
         max_length=350,
@@ -41,4 +42,4 @@ class Partners(models.Model):
         ]
 
     def __str__(self):
-        return self.name
+        return f'{self.name[:TEXT_CUT_VALUE]}...'

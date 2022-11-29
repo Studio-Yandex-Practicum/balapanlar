@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.viewsets import ReadOnlyModelViewSet
@@ -20,4 +21,14 @@ class RequisitesViewSet(ReadOnlyModelViewSet):
     ---
     """
     queryset = Requisites.objects.all()
+=======
+from rest_framework import viewsets
+
+from npo_project.models import Requisite
+from ..serializers import RequisitesSerializer
+
+
+class RequisitesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Requisite.objects.all()
+>>>>>>> 91bf0de0d3f9e5afcd578ad35d58cbcb3c5c6aa3
     serializer_class = RequisitesSerializer

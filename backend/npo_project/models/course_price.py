@@ -1,7 +1,10 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class CoursePrice(models.Model):
+    """Model CoursePrice, site section 'Our Courses'."""
     price = models.CharField(
         'стоимость курсов', max_length=100,
         help_text='Напишите в формате "Стоимость курсов 3500 руб./мес."'
@@ -26,11 +29,11 @@ class CoursePrice(models.Model):
         db_table = 'course_price'
 
     def __str__(self):
-        return self.price
+        return f'{self.price[:TEXT_CUT_VALUE]}...'
 
 
 class IncludedInCoursePrice(models.Model):
-    """Что входит в стоимость курсов."""
+    """Model IncludedInCoursePrice, site section 'Our Courses'."""
     text = models.CharField(
         'что включено в стоимость', max_length=100,
         help_text='например, "Снэки, вода, чай на нашей кухне"'
@@ -42,11 +45,11 @@ class IncludedInCoursePrice(models.Model):
         db_table = 'included_in_course_price'
 
     def __str__(self):
-        return f'{self.text[:20]}'
+        return f'{self.text[:TEXT_CUT_VALUE]}...'
 
 
 class NotIncludedInCoursePrice(models.Model):
-    """Что входит в стоимость курсов."""
+    """Model NotIncludedInCoursePrice, site section 'Our Courses'."""
     text = models.CharField(
         'что не включено в стоимость', max_length=100,
         help_text='например, "Трансфер из вашего аула к центру"'
@@ -58,4 +61,4 @@ class NotIncludedInCoursePrice(models.Model):
         db_table = 'not_included_in_course_price'
 
     def __str__(self):
-        return f'{self.text[:20]}'
+        return f'{self.text[:TEXT_CUT_VALUE]}...'
