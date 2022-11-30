@@ -4,7 +4,7 @@ from rest_framework import serializers
 from npo_project.models import Partner
 
 
-class PartnersSerializer(serializers.ModelSerializer):
+class PartnerSerializer(serializers.ModelSerializer):
     image = Base64ImageField(max_length=None, use_url=True)
 
     class Meta:

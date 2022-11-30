@@ -1,7 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 
 from npo_project.models import Benefit
 from .constants import SCHEMA_PARAMS
@@ -15,13 +15,7 @@ from ..serializers import BenefitRoleSerializer, BenefitSerializer
         manual_parameters=SCHEMA_PARAMS['beneficial_to']
     )
 )
-@method_decorator(
-    name='retrieve',
-    decorator=swagger_auto_schema(
-        manual_parameters=SCHEMA_PARAMS['id']
-    )
-)
-class BenefitViewSet(viewsets.ReadOnlyModelViewSet):
+class BenefitViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Разделы "Почему вашему ребёнку понравится у нас?"
     и "Почему это удобно родителям?"

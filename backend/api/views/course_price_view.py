@@ -1,24 +1,15 @@
-from django.utils.decorators import method_decorator
-from drf_yasg.utils import swagger_auto_schema
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 
 from npo_project.models import (
     CoursePrice, IncludedInCoursePrice, NotIncludedInCoursePrice
 )
-from .constants import SCHEMA_PARAMS
 from ..serializers import (
     CoursePriceSerializer, IncludedInCoursePriceSerializer,
     NotIncludedInCoursePriceSerializer
 )
 
 
-@method_decorator(
-    name='retrieve',
-    decorator=swagger_auto_schema(
-        manual_parameters=SCHEMA_PARAMS['id']
-    )
-)
-class IncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
+class IncludedInCoursePriceViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Что включено в стоимость
 
@@ -28,13 +19,9 @@ class IncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = IncludedInCoursePriceSerializer
 
 
-@method_decorator(
-    name='retrieve',
-    decorator=swagger_auto_schema(
-        manual_parameters=SCHEMA_PARAMS['id']
-    )
-)
-class NotIncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
+class NotIncludedInCoursePriceViewSet(
+    mixins.ListModelMixin, viewsets.GenericViewSet
+):
     """
     Что не включено в стоимость
 
@@ -44,13 +31,7 @@ class NotIncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = NotIncludedInCoursePriceSerializer
 
 
-@method_decorator(
-    name='retrieve',
-    decorator=swagger_auto_schema(
-        manual_parameters=SCHEMA_PARAMS['id']
-    )
-)
-class CoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
+class CoursePriceViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Раздел "Стоимость курсов"
 

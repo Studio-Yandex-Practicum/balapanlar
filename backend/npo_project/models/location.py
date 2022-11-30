@@ -21,14 +21,14 @@ class Location(models.Model):
     additional_info = models.TextField(
         'дополнительная информация',
         blank=True,
-        help_text='Укажите дополнительную информацию о том как найти центр. '
+        help_text='Укажите дополнительную информацию, о том как найти центр. '
                   'Пример заполнения: ТЦ «Каскад», 2 этаж'
     )
     full_address = models.CharField(
         'полный адрес',
         blank=True,
         max_length=256,
-        help_text='Полный адрес для отоброжения на сайте. '
+        help_text='Полный адрес для отображения на сайте. '
                   'Автогенерируется на основе введенных ранее данных.'
     )
 
@@ -41,7 +41,7 @@ class Location(models.Model):
         return f'{self.full_address[:TEXT_CUT_VALUE]}...'
 
     def save(self, *args, **kwargs):
-        full_address = self.address_for_center + ': ' + self.address
+        full_address = self.center_name + ': ' + self.address
         if self.additional_info:
             full_address += ', ' + self.additional_info
         self.full_address = full_address

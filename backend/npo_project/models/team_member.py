@@ -66,7 +66,7 @@ class TeamMember(models.Model):
             else:
                 full_name = self.last_name + ' ' + full_name
         self.full_name = full_name
-        super(TeamMember, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.full_name}, {self.role}'

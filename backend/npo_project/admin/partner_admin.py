@@ -5,7 +5,7 @@ from ..models import Partner
 
 
 @admin.register(Partner)
-class PartnersAdmin(admin.ModelAdmin):
+class PartnerAdmin(admin.ModelAdmin):
     fields = ('name', 'description', 'image', 'logotype', 'url')
     list_display = ('name', 'description', 'logotype', 'url')
     list_editable = ('description',)
