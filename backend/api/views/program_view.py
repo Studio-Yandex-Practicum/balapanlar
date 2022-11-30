@@ -16,7 +16,9 @@ class ProgramViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     serializer_class = ProgramSerializer
 
 
-class ProgramCharacteristicViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+class ProgramCharacteristicViewSet(
+    mixins.ListModelMixin, viewsets.GenericViewSet
+):
     """
     Характеристики карточек раздела "О нас"
 

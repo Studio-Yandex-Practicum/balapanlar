@@ -9,7 +9,9 @@ from ..serializers import (
 )
 
 
-class IncludedInCoursePriceViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+class IncludedInCoursePriceViewSet(
+    mixins.ListModelMixin, viewsets.GenericViewSet
+):
     """
     Что включено в стоимость
 
