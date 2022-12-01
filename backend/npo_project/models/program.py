@@ -46,7 +46,7 @@ class ProgramCharacteristic(models.Model):
 
     class Meta:
         verbose_name = 'характеристика программы'
-        verbose_name_plural = 'характеристики программы'
+        verbose_name_plural = 'характеристики программ'
         db_table = 'program_сharacteristic'
 
     def __str__(self):
