@@ -1,20 +1,36 @@
 from django.db import models
-from yandex_geocoder import Client
+
+from balapanlar.settings import TEXT_CUT_VALUE
+from .utils import get_coordinates
 
 
 class Location(models.Model):
-    """Адрес организации"""
-
-    adress = models.TextField(
-        verbose_name='Адрес',
-        max_length=100,
-        help_text='Впишите текущий адрес'
-    )
-    image = models.ImageField(
+    """Model Location, site section 'How to find us?'."""
+    center_name = models.CharField(
+        'название центра',
+        max_length=50,
         blank=False,
-        upload_to='location_img/',
-        verbose_name='Карта',
-        help_text='Тут можно вставить карту (скриншот например)'
+        help_text='Пример заполнения данного поля: Адрес «УЯ»'
+    )
+    address = models.CharField(
+        'адрес',
+        blank=False,
+        max_length=100,
+        help_text='Укажите текущий адрес для отображения на сайте. '
+                  'Например: аул Икон-Халк, ул. Ленина 175'
+    )
+    additional_info = models.TextField(
+        'дополнительная информация',
+        blank=True,
+        help_text='Укажите дополнительную информацию, о том как найти центр. '
+                  'Пример заполнения: ТЦ «Каскад», 2 этаж'
+    )
+    full_address = models.CharField(
+        'полный адрес',
+        blank=True,
+        max_length=256,
+        help_text='Полный адрес для отображения на сайте. '
+                  'Автогенерируется на основе введенных ранее данных.'
     )
     latitude = models.FloatField(
         'Широта точки', null=True
@@ -24,13 +40,17 @@ class Location(models.Model):
     )
 
     class Meta:
-        verbose_name = 'Адрес'
-        verbose_name_plural = 'Адреса'
+        db_table = 'location'
+        verbose_name = 'адрес'
+        verbose_name_plural = 'адреса'
 
     def __str__(self):
-        return self.adress
+        return f'{self.full_address[:TEXT_CUT_VALUE]}...'
 
     def save(self, *args, **kwargs):
-        client = Client('8d85ce6f-3c2a-430c-b9f4-4702060528e9')
-        self.longitude, self.latitude = client.coordinates(self.adress)
-        super(Location, self).save(*args, **kwargs)
+        full_address = self.center_name + ': ' + self.address
+        if self.additional_info:
+            full_address += ', ' + self.additional_info
+        self.full_address = full_address
+        self.longitude, self.latitude = get_coordinates(self.address)
+        super().save(*args, **kwargs)

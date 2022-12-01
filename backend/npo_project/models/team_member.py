@@ -3,38 +3,36 @@ from django.utils.translation import gettext_lazy as _
 
 
 class TeamMember(models.Model):
-    """Участники команды, раздел 'Команда'."""
+    """Model TeamMember, site section 'Team'."""
     class NameReprChoices(models.TextChoices):
         IOF = 'IOF', _('Сначала имя')
         FIO = 'FIO', _('Сначала фамилия')
 
     name = models.CharField(
-        'Имя', help_text='Введите имя участника команды', max_length=100,
+        'имя', help_text='Введите имя участника команды', max_length=100,
     )
     second_name = models.CharField(
-        'Отчество',
+        'отчество',
         help_text='Необязательное поле. '
                   'Введите отчество, если его нужно отобразить на странице',
         max_length=100,
-        null=True,
         blank=True
     )
     last_name = models.CharField(
-        'Фамилия',
+        'фамилия',
         help_text='Необязательное поле. '
                   'Введите фамилию, если ее нужно отобразить на странице',
         max_length=100,
-        null=True,
         blank=True
     )
     full_name = models.CharField(
-        'Полное имя',
+        'полное имя',
         help_text='Автогенерируется на основе введенных данных',
         max_length=300,
-        null=True,
+        blank=True
     )
     name_representation = models.CharField(
-        'Отображение имени',
+        'отображение имени',
         help_text='Поменяйте, если хотите, чтобы фамилия (при наличии) '
                   'отображалась сначала. Или наоборот',
         choices=NameReprChoices.choices,
@@ -42,19 +40,19 @@ class TeamMember(models.Model):
         max_length=3
     )
     role = models.CharField(
-        'Роль в команде',
+        'роль в команде',
         max_length=100,
         help_text='Например, "администратор" или "куратор"'
     )
     image = models.ImageField(
-        'Фотография',
+        'фотография',
         upload_to='team_members/',
         help_text='Добавьте фотография участника команды'
     )
 
     class Meta:
-        verbose_name = 'Участник команды'
-        verbose_name_plural = 'Участники команды'
+        verbose_name = 'участник команды'
+        verbose_name_plural = 'участники команды'
         db_table = 'team_member'
         ordering = ('name',)
 
@@ -68,7 +66,7 @@ class TeamMember(models.Model):
             else:
                 full_name = self.last_name + ' ' + full_name
         self.full_name = full_name
-        super(TeamMember, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.full_name}, {self.role}'

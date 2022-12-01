@@ -119,3 +119,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 EMPTY_VALUE_ADMIN_PANEL = '--пусто--'
+TEXT_CUT_VALUE = 30

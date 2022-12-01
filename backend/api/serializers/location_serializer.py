@@ -5,8 +5,8 @@ from npo_project.models import Location
 
 
 class LocationSerializer(serializers.ModelSerializer):
-    image = Base64ImageField(max_length=None, use_url=True)
+    image = Base64ImageField()
 
     class Meta:
         model = Location
-        fields = '__all__'
+        fields = ('id', 'full_address', 'image', 'latitude', 'longitude')
