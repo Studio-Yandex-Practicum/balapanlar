@@ -1,17 +1,20 @@
-from django.urls import include, path
 from rest_framework.routers import DefaultRouter
+
+from django.urls import include, path
 
 from .views import (
     BenefitViewSet,
     CourseViewSet,
     CoursePriceViewSet,
+    FAQViewSet,
     IncludedInCoursePriceViewSet,
+    LocationViewSet,
     NotIncludedInCoursePriceViewSet,
-    PartnersViewSet,
-    PrinciplesViewSet,
+    PartnerViewSet,
+    PrincipleViewSet,
     ProgramViewSet,
     ProgramCharacteristicViewSet,
-    RequisitesViewSet,
+    RequisiteViewSet,
     TeamMemberViewSet
 )
 
@@ -21,9 +24,11 @@ router_v1 = DefaultRouter()
 
 
 router_v1.register('benefits', BenefitViewSet, basename='benefits')
-router_v1.register('partners', PartnersViewSet, basename='partners')
-router_v1.register('principles', PrinciplesViewSet, basename='principles')
-router_v1.register('requisites', RequisitesViewSet, basename='requisites')
+router_v1.register('questions', FAQViewSet, basename='questions')
+router_v1.register('locations', LocationViewSet, basename='locations')
+router_v1.register('partners', PartnerViewSet, basename='partners')
+router_v1.register('principles', PrincipleViewSet, basename='principles')
+router_v1.register('requisites', RequisiteViewSet, basename='requisites')
 router_v1.register('programs', ProgramViewSet, basename='programs')
 router_v1.register('programs_characteristics', ProgramCharacteristicViewSet,
                    basename='programs_characteristics')

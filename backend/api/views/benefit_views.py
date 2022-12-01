@@ -1,29 +1,32 @@
-from rest_framework import viewsets
-from rest_framework.decorators import action
-from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
+from django.utils.decorators import method_decorator
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import mixins, viewsets
 
 from npo_project.models import Benefit
+from .constants import SCHEMA_PARAMS
 from ..filters import BenefitFilter
 from ..serializers import BenefitRoleSerializer, BenefitSerializer
 
 
-class BenefitViewSet(viewsets.ReadOnlyModelViewSet):
+@method_decorator(
+    name='list',
+    decorator=swagger_auto_schema(
+        manual_parameters=SCHEMA_PARAMS['beneficial_to']
+    )
+)
+class BenefitViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    Разделы "Почему вашему ребёнку понравится у нас?"
+    и "Почему это удобно родителям?"
+
+    ---
+    """
     queryset = Benefit.objects.all()
+    filter_backends = (DjangoFilterBackend,)
     filterset_class = BenefitFilter
 
     def get_serializer_class(self):
-        if 'for_' in self.request.get_full_path():
+        if not self.request or self.request.query_params:
             return BenefitRoleSerializer
         return BenefitSerializer
-
-    @action(methods=["get", ], detail=False)
-    def for_children(self, request):
-        beneficial_to = self.queryset.filter(beneficial_to='CHILD')
-        serializer = self.get_serializer(beneficial_to, many=True)
-        return Response(serializer.data)
-
-    @action(methods=["get", ], detail=False)
-    def for_parents(self, request):
-        beneficial_to = self.queryset.filter(beneficial_to='PARENT')
-        serializer = self.get_serializer(beneficial_to, many=True)
-        return Response(serializer.data)

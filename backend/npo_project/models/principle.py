@@ -1,9 +1,8 @@
 from django.db import models
 
 
-class Principles(models.Model):
-    """Наши принципы"""
-
+class Principle(models.Model):
+    """Model Principle, site section 'Principles'."""
     text = models.TextField(
         'описание принципа',
         blank=False,

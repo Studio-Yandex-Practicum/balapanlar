@@ -1,20 +1,13 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from ..models import Partners
-
-admin.AdminSite.site_header = 'Администрирование - Балапанлар'
+from ..models import Partner
 
 
-@admin.register(Partners)
-class PartnersAdmin(admin.ModelAdmin):
+@admin.register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
     fields = ('name', 'description', 'image', 'logotype', 'url')
-    list_display = (
-        'name',
-        'description',
-        'logotype',
-        'url',
-    )
+    list_display = ('name', 'description', 'logotype', 'url')
     list_editable = ('description',)
     search_fields = ('name',)
     list_filter = ('name',)

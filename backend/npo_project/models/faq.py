@@ -1,18 +1,24 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class FAQ(models.Model):
+    """Model FAQ, site section 'FAQ'."""
     question = models.TextField(
-        verbose_name='Вопрос',
-        max_length=100)
+        'вопрос',
+        max_length=100,
+        help_text='Впишите часто задаваемый вопрос'
+    )
     answer = models.TextField(
-        verbose_name='Ответ',
-        max_length=1500)
+        'ответ',
+        max_length=1500,
+        help_text='Дайте развернутый ответ'
+    )
 
     class Meta:
-        verbose_name = 'Вопросы'
-        verbose_name_plural = 'Часто задаваемые вопросы'
+        verbose_name = 'часто задаваемый вопрос'
+        verbose_name_plural = 'часто задаваемые вопросы'
 
     def __str__(self):
-        return (f'{self.question}, '
-                f'{self.answer}')
+        return f'Вопрос: {self.question[:TEXT_CUT_VALUE]}...'

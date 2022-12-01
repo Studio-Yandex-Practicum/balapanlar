@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
+    'django_filters',
     'rest_framework',
     'sorl.thumbnail',
     'tinymce',
@@ -117,3 +119,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 EMPTY_VALUE_ADMIN_PANEL = '--пусто--'
+TEXT_CUT_VALUE = 30

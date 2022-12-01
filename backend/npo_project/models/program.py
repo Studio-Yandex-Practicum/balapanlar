@@ -1,9 +1,10 @@
 from django.db import models
 
+from balapanlar.settings import TEXT_CUT_VALUE
+
 
 class Program(models.Model):
-    """Программы из раздела 'О нас', e.g. 'Досуговый центр «Уя»'."""
-
+    """Model Program, site section 'About Us'."""
     name = models.CharField(
         'название программы', max_length=100,
         help_text='Например, "Досуговый центр «Уя»"'
@@ -33,12 +34,11 @@ class Program(models.Model):
         db_table = 'program'
 
     def __str__(self):
-        return self.name
+        return f'{self.name[:TEXT_CUT_VALUE]}...'
 
 
 class ProgramCharacteristic(models.Model):
-    """Характеристики программ, e.g. 'Занятия весь год/Занятия в каникулы'."""
-
+    """Model ProgramCharacteristic, site section 'About Us'."""
     text = models.CharField(
         'текст характеристики', max_length=100,
         help_text='Например, "Занятия весь год" или "Занятия в каникулы"'
@@ -50,4 +50,4 @@ class ProgramCharacteristic(models.Model):
         db_table = 'program_сharacteristic'
 
     def __str__(self):
-        return f'{self.text[:20]}...'
+        return f'{self.text[:TEXT_CUT_VALUE]}...'

@@ -1,12 +1,12 @@
 from drf_extra_fields.fields import Base64ImageField
 from rest_framework import serializers
 
-from npo_project.models import Principles
+from npo_project.models import Principle
 
 
-class PrinciplesSerializer(serializers.ModelSerializer):
+class PrincipleSerializer(serializers.ModelSerializer):
     image = Base64ImageField(max_length=None, use_url=True)
 
     class Meta:
-        model = Principles
-        fields = ['text', 'image']
+        model = Principle
+        fields = ('id', 'text', 'image')

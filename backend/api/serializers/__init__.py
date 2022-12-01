@@ -4,11 +4,13 @@ from .course_price_serializer import (
     CoursePriceSerializer, IncludedInCoursePriceSerializer,
     NotIncludedInCoursePriceSerializer
 )
-from .partners_serializer import PartnersSerializer
-from .principles_serializer import PrinciplesSerializer
+from .faq_serializer import FAQSerializer
+from .location_serializer import LocationSerializer
+from .partner_serializer import PartnerSerializer
+from .principle_serializer import PrincipleSerializer
 from .program_serializer import (
     ProgramSerializer, ProgramCharacteristicSerializer)
-from .requisites_serializer import RequisitesSerializer
+from .requisite_serializer import RequisiteSerializer
 from .team_member_serializer import TeamMemberSerializer
 
 __all__ = [
@@ -17,12 +19,14 @@ __all__ = [
     'CourseSerializer',
     'CoursePriceSerializer',
     'CourseTagSerializer',
+    'FAQSerializer',
     'IncludedInCoursePriceSerializer',
+    'LocationSerializer',
     'NotIncludedInCoursePriceSerializer',
-    'PartnersSerializer',
-    'PrinciplesSerializer',
+    'PartnerSerializer',
+    'PrincipleSerializer',
     'ProgramSerializer',
     'ProgramCharacteristicSerializer',
-    'RequisitesSerializer',
+    'RequisiteSerializer',
     'TeamMemberSerializer'
 ]
