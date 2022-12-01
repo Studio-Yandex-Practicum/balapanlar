@@ -7,10 +7,10 @@ from .course_price import (
 )
 from .faq import FAQ
 from .location import Location
-from .partners import Partner
-from .principles import Principle
+from .partner import Partner
+from .principle import Principle
 from .program import Program, ProgramCharacteristic
-from .requisites import Requisite
+from .requisite import Requisite
 from .team_member import TeamMember
 from .user import CustomUser
 

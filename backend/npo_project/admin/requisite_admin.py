@@ -4,6 +4,6 @@ from ..models import Requisite
 
 
 @admin.register(Requisite)
-class RequisitesAdmin(admin.ModelAdmin):
+class RequisiteAdmin(admin.ModelAdmin):
     list_display = ('text',)
     list_display_links = ('text',)

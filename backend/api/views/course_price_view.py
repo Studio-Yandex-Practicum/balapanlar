@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 
 from npo_project.models import (
     CoursePrice, IncludedInCoursePrice, NotIncludedInCoursePrice
@@ -9,16 +9,35 @@ from ..serializers import (
 )
 
 
-class IncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
+class IncludedInCoursePriceViewSet(
+    mixins.ListModelMixin, viewsets.GenericViewSet
+):
+    """
+    Что включено в стоимость
+
+    ---
+    """
     queryset = IncludedInCoursePrice.objects.all()
     serializer_class = IncludedInCoursePriceSerializer
 
 
-class NotIncludedInCoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
+class NotIncludedInCoursePriceViewSet(
+    mixins.ListModelMixin, viewsets.GenericViewSet
+):
+    """
+    Что не включено в стоимость
+
+    ---
+    """
     queryset = NotIncludedInCoursePrice.objects.all()
     serializer_class = NotIncludedInCoursePriceSerializer
 
 
-class CoursePriceViewSet(viewsets.ReadOnlyModelViewSet):
+class CoursePriceViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    Раздел "Стоимость курсов"
+
+    ---
+    """
     queryset = CoursePrice.objects.all()
     serializer_class = CoursePriceSerializer

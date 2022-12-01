@@ -6,10 +6,10 @@ from .course_price_view import (
 )
 from .faq_views import FAQViewSet
 from .location_views import LocationViewSet
-from .partners_views import PartnersViewSet
-from .principles_views import PrinciplesViewSet
+from .partner_views import PartnerViewSet
+from .principle_views import PrincipleViewSet
 from .program_view import ProgramViewSet, ProgramCharacteristicViewSet
-from .requisites_views import RequisitesViewSet
+from .requisite_views import RequisiteViewSet
 from .team_member_views import TeamMemberViewSet
 
 __all__ = [
@@ -20,10 +20,10 @@ __all__ = [
     'IncludedInCoursePriceViewSet',
     'LocationViewSet',
     'NotIncludedInCoursePriceViewSet',
-    'PartnersViewSet',
-    'PrinciplesViewSet',
+    'PartnerViewSet',
+    'PrincipleViewSet',
     'ProgramViewSet',
     'ProgramCharacteristicViewSet',
-    'RequisitesViewSet',
+    'RequisiteViewSet',
     'TeamMemberViewSet'
 ]

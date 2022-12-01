@@ -9,10 +9,10 @@ from .course_price_admin import (
 from .course_admin import CourseAdmin, CourseTagAdmin
 from .faq_admin import FAQAdmin
 from .location_admin import LocationAdmin
-from .partners_admin import PartnersAdmin
-from .principles_admin import PrinciplesAdmin
+from .partner_admin import PartnerAdmin
+from .principle_admin import PrincipleAdmin
 from .program_admin import ProgramAdmin, ProgramCharacteristicAdmin
-from .requisites_admin import RequisitesAdmin
+from .requisite_admin import RequisiteAdmin
 from .team_member_admin import TeamMemberAdmin
 from .user_admin import CustomUserAdmin
 
@@ -26,11 +26,11 @@ __all__ = [
     'IncludedInCoursePriceAdmin',
     'LocationAdmin',
     'NotIncludedInCoursePriceAdmin',
-    'PartnersAdmin',
-    'PrinciplesAdmin',
+    'PartnerAdmin',
+    'PrincipleAdmin',
     'ProgramAdmin',
     'ProgramCharacteristicAdmin',
-    'RequisitesAdmin',
+    'RequisiteAdmin',
     'TeamMemberAdmin'
 ]
 

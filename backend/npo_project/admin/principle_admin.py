@@ -6,7 +6,7 @@ from ..models import Principle
 
 
 @admin.register(Principle)
-class PrinciplesAdmin(admin.ModelAdmin):
+class PrincipleAdmin(admin.ModelAdmin):
     fields = ('text', 'image', 'picture')
     list_display = ('text', 'picture')
     search_fields = ('text',)
