@@ -38,6 +38,21 @@ class Location(models.Model):
     longitude = models.FloatField(
         'Долгота точки', null=True
     )
+    image = models.ImageField(
+        'Схема проезда',
+        blank=True,
+        null=True,
+        upload_to='locations/',
+        help_text='Можете добавить картинку со схемой, чтобы показать, как '
+                  'добраться до указанного адреса',
+    )
+    schema_description = models.CharField(
+        'Описание для схемы проезда',
+        max_length=250,
+        help_text='Можете добавить краткое описание, как добраться. '
+                  'Например: вход через серые ворота справа от аптеки',
+        blank=True,
+    )
 
     class Meta:
         db_table = 'location'
