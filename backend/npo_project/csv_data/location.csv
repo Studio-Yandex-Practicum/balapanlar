@@ -1,2 +1,2 @@
-id,center_name,address,additional_info
-1,"Адрес «УЯ»:","аул Икон-Халк, ул. Ленина 175,","ТЦ «Каскад», 2 этаж"
+id,center_name,address,additional_info,image,schema_description
+1,"Адрес «УЯ»:","аул Икон-Халк, ул. Ленина 175,","ТЦ «Каскад», 2 этаж",locations/how_to_find_us_desktop.jpg,вход через серые ворота справа от аптеки

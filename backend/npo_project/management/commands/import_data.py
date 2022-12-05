@@ -207,7 +207,8 @@ class Command(BaseCommand):
     def load_location(self):
         self.load_model(
             'location',
-            ['id', 'center_name', 'address', 'additional_info']
+            ['id', 'center_name', 'address', 'additional_info', 'image',
+             'schema_description']
         )
 
     def load_requisite(self):
