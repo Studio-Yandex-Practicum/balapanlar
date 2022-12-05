@@ -11,7 +11,6 @@ from npo_project.models import (
     CourseCategory,
     CoursePrice,
     CourseTag,
-    CustomUser,
     FAQ,
     IncludedInCoursePrice,
     Location,
@@ -30,7 +29,6 @@ MODEL_NAME_FILE = {
     'course_category': (CourseCategory, 'course_category.csv'),
     'course_price': (CoursePrice, 'course_price.csv'),
     'course_tag': (CourseTag, 'course_tag.csv'),
-    'custom_user': (CustomUser, 'custom_user.csv'),
     'faq': (FAQ, 'faq.csv'),
     'included_in_course_price': (
         IncludedInCoursePrice, 'incl_in_course_price.csv'
@@ -162,7 +160,7 @@ class Command(BaseCommand):
     def load_benefit(self):
         self.load_model(
             'benefit',
-            ['id', 'text', 'beneficial_to']
+            ['id', 'text', 'beneficial_to', 'image']
         )
 
     def load_program_characteristic(self):
