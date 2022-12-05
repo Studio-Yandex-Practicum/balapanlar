@@ -1,6 +1,7 @@
 from django.db import models
 
 from balapanlar.settings import TEXT_CUT_VALUE
+from .utils import get_coordinates
 
 
 class Location(models.Model):
@@ -31,6 +32,27 @@ class Location(models.Model):
         help_text='Полный адрес для отображения на сайте. '
                   'Автогенерируется на основе введенных ранее данных.'
     )
+    latitude = models.FloatField(
+        'Широта точки', null=True
+    )
+    longitude = models.FloatField(
+        'Долгота точки', null=True
+    )
+    image = models.ImageField(
+        'Схема проезда',
+        blank=True,
+        null=True,
+        upload_to='locations/',
+        help_text='Можете добавить картинку со схемой, чтобы показать, как '
+                  'добраться до указанного адреса',
+    )
+    schema_description = models.CharField(
+        'Описание для схемы проезда',
+        max_length=250,
+        help_text='Можете добавить краткое описание, как добраться. '
+                  'Например: вход через серые ворота справа от аптеки',
+        blank=True,
+    )
 
     class Meta:
         db_table = 'location'
@@ -45,4 +67,5 @@ class Location(models.Model):
         if self.additional_info:
             full_address += ', ' + self.additional_info
         self.full_address = full_address
+        self.longitude, self.latitude = get_coordinates(self.address)
         super().save(*args, **kwargs)
