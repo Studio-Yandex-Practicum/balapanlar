@@ -51,6 +51,9 @@ MODEL_NAME_FILE = {
 class Command(BaseCommand):
     help = 'Load data from a csv file to the corresponding db table'
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
     @staticmethod
     def get_csv_file(filename):
         return os.path.join(
@@ -60,9 +63,6 @@ class Command(BaseCommand):
     @staticmethod
     def clear_model(model):
         model.objects.all().delete()
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
 
     def print_to_terminal(self, message):
         self.stdout.write(self.style.SUCCESS(message))
@@ -85,8 +85,8 @@ class Command(BaseCommand):
     def connecting_related_models(self,
                                   main_model,
                                   related_model,
-                                  relational_field: str,
-                                  through_model_name: str):
+                                  relational_field,
+                                  through_model_name):
 
         with open(self.get_csv_file(f'_{through_model_name}.csv')) as file:
             reader = csv.reader(file, delimiter=',')
@@ -108,20 +108,20 @@ class Command(BaseCommand):
     def load_course_category(self):
         self.load_model(
             'course_category',
-            ['id', 'name', 'description']
+            ('id', 'name', 'description')
         )
 
     def load_course_tag(self):
         self.load_model(
             'course_tag',
-            ['id', 'name']
+            ('id', 'name')
         )
 
     def load_course(self):
         self.load_model(
             'course',
-            ['id', 'name', 'age_groups', 'duration', 'description',
-             'skills', 'category_id']
+            ('id', 'name', 'age_groups', 'duration', 'description',
+             'skills', 'category_id')
         )
         self.connecting_related_models(
             Course, CourseTag,
@@ -132,19 +132,19 @@ class Command(BaseCommand):
     def load_incl_in_course_price(self):
         self.load_model(
             'included_in_course_price',
-            ['id', 'text']
+            ('id', 'text')
         )
 
     def load_not_incl_in_course_price(self):
         self.load_model(
             'not_included_in_course_price',
-            ['id', 'text']
+            ('id', 'text')
         )
 
     def load_course_price(self):
         self.load_model(
             'course_price',
-            ['id', 'price', 'payment_url']
+            ('id', 'price', 'payment_url')
         )
         self.connecting_related_models(
             CoursePrice, IncludedInCoursePrice,
@@ -160,19 +160,19 @@ class Command(BaseCommand):
     def load_benefit(self):
         self.load_model(
             'benefit',
-            ['id', 'text', 'beneficial_to', 'image']
+            ('id', 'text', 'beneficial_to', 'image')
         )
 
     def load_program_characteristic(self):
         self.load_model(
             'program_characteristic',
-            ['id', 'text']
+            ('id', 'text')
         )
 
     def load_program(self):
         self.load_model(
             'program',
-            ['id', 'name', 'image', 'description', 'location']
+            ('id', 'name', 'image', 'description', 'location')
         )
         self.connecting_related_models(
             Program, ProgramCharacteristic,
@@ -183,38 +183,38 @@ class Command(BaseCommand):
     def load_principle(self):
         self.load_model(
             'principle',
-            ['id', 'text', 'image']
+            ('id', 'text', 'image')
         )
 
     def load_team_member(self):
         self.load_model(
             'team_member',
-            ['id', 'name', 'last_name', 'role', 'image']
+            ('id', 'name', 'last_name', 'role', 'image')
         )
 
     def load_faq(self):
         self.load_model(
             'faq',
-            ['id', 'question', 'answer']
+            ('id', 'question', 'answer')
         )
 
     def load_partner(self):
         self.load_model(
             'partner',
-            ['id', 'name', 'description', 'image', 'url']
+            ('id', 'name', 'description', 'image', 'url')
         )
 
     def load_location(self):
         self.load_model(
             'location',
-            ['id', 'center_name', 'address', 'additional_info', 'image',
-             'schema_description']
+            ('id', 'center_name', 'address', 'additional_info', 'image',
+             'schema_description')
         )
 
     def load_requisite(self):
         self.load_model(
             'requisite',
-            ['id', 'text']
+            ('id', 'text')
         )
 
     def handle(self, *args, **kwargs):
