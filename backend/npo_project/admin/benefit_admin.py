@@ -9,8 +9,8 @@ from ..models import Benefit
 
 @admin.register(Benefit)
 class BenefitAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text', 'beneficial_to', 'image', 'preview')
-    list_editable = ('text', 'beneficial_to', 'image')
+    list_display = ('text', 'beneficial_to', 'image', 'preview')
+    list_editable = ('beneficial_to', 'image')
     empty_value_display = EMPTY_VALUE_ADMIN_PANEL
     list_filter = ('beneficial_to',)
     search_fields = ('text',)
