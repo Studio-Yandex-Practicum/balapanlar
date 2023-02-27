@@ -23,6 +23,7 @@ services:
       - media_value:/var/html/media/
       - ./gnezdokavkaza.crt:/etc/ssl/gnezdokavkaza.crt
       - ./gnezdokavkaza.key:/etc/ssl/gnezdokavkaza.key
+
     depends_on:
       - frontend
     container_name: 'nginx'

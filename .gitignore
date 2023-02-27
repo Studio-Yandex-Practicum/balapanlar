@@ -127,4 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+media/cache/
+
+# .idea
 .idea/
+.vscode/
+
+# Migrations
+migrations/

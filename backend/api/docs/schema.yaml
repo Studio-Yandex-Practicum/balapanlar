@@ -1,0 +1,712 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/v1/benefits/:
+    get:
+      operationId: listBenefits
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B\u044B \"\u041F\u043E\u0447\
+        \u0435\u043C\u0443 \u0432\u0430\u0448\u0435\u043C\u0443 \u0440\u0435\u0431\
+        \u0451\u043D\u043A\u0443 \u043F\u043E\u043D\u0440\u0430\u0432\u0438\u0442\u0441\
+        \u044F \u0443 \u043D\u0430\u0441?\"\n\u0438 \"\u041F\u043E\u0447\u0435\u043C\
+        \u0443 \u044D\u0442\u043E \u0443\u0434\u043E\u0431\u043D\u043E \u0440\u043E\
+        \u0434\u0438\u0442\u0435\u043B\u044F\u043C?\"\n\n---"
+      parameters:
+      - name: beneficial_to
+        required: false
+        in: query
+        description: beneficial_to
+        schema:
+          type: string
+          enum:
+          - CHILD
+          - PARENT
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BenefitRole'
+          description: ''
+      tags:
+      - api
+  /api/v1/questions/:
+    get:
+      operationId: listFAQs
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u0427\u0430\u0441\u0442\
+        \u043E \u0437\u0430\u0434\u0430\u0432\u0430\u0435\u043C\u044B\u0435 \u0432\
+        \u043E\u043F\u0440\u043E\u0441\u044B\"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FAQ'
+          description: ''
+      tags:
+      - api
+  /api/v1/locations/:
+    get:
+      operationId: listLocations
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u041A\u0430\u043A \u043D\
+        \u0430\u0441 \u043D\u0430\u0439\u0442\u0438\"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+          description: ''
+      tags:
+      - api
+  /api/v1/partners/:
+    get:
+      operationId: listPartners
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u041D\u0430\u0448\u0438\
+        \ \u043F\u0430\u0440\u0442\u043D\u0435\u0440\u044B\"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Partner'
+          description: ''
+      tags:
+      - api
+  /api/v1/principles/:
+    get:
+      operationId: listPrinciples
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u041D\u0430\u0448\u0438\
+        \ \u043F\u0440\u0438\u043D\u0446\u0438\u043F\u044B\"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Principle'
+          description: ''
+      tags:
+      - api
+  /api/v1/requisites/:
+    get:
+      operationId: listRequisites
+      description: "\u0414\u0430\u043D\u043D\u044B\u0435 \u043E\u0440\u0433\u0430\u043D\
+        \u0438\u0437\u0430\u0446\u0438\u0438: \u0440\u0435\u043A\u0432\u0438\u0437\
+        \u0438\u0442\u044B\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Requisite'
+          description: ''
+      tags:
+      - api
+  /api/v1/programs/:
+    get:
+      operationId: listPrograms
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u041E \u043D\u0430\u0441\
+        \"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Program'
+          description: ''
+      tags:
+      - api
+  /api/v1/programs_characteristics/:
+    get:
+      operationId: listProgramCharacteristics
+      description: "\u0425\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0441\u0442\
+        \u0438\u043A\u0438 \u043A\u0430\u0440\u0442\u043E\u0447\u0435\u043A \u0440\
+        \u0430\u0437\u0434\u0435\u043B\u0430 \"\u041E \u043D\u0430\u0441\"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProgramCharacteristic'
+          description: ''
+      tags:
+      - api
+  /api/v1/course_prices/:
+    get:
+      operationId: listCoursePrices
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u0421\u0442\u043E\u0438\
+        \u043C\u043E\u0441\u0442\u044C \u043A\u0443\u0440\u0441\u043E\u0432\"\n\n\
+        ---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CoursePrice'
+          description: ''
+      tags:
+      - api
+  /api/v1/included_in_course_price/:
+    get:
+      operationId: listIncludedInCoursePrices
+      description: "\u0427\u0442\u043E \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u043E\
+        \ \u0432 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IncludedInCoursePrice'
+          description: ''
+      tags:
+      - api
+  /api/v1/not_included_in_course_price/:
+    get:
+      operationId: listNotIncludedInCoursePrices
+      description: "\u0427\u0442\u043E \u043D\u0435 \u0432\u043A\u043B\u044E\u0447\
+        \u0435\u043D\u043E \u0432 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\
+        \u044C\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/NotIncludedInCoursePrice'
+          description: ''
+      tags:
+      - api
+  /api/v1/team_members/:
+    get:
+      operationId: listTeamMembers
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u041A\u043E\u043C\u0430\
+        \u043D\u0434\u0430\"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeamMember'
+          description: ''
+      tags:
+      - api
+  /api/v1/courses/:
+    get:
+      operationId: listCourses
+      description: "\u0420\u0430\u0437\u0434\u0435\u043B \"\u041D\u0430\u0448\u0438\
+        \ \u043A\u0443\u0440\u0441\u044B\"\n\n---"
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    BenefitRole:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        image:
+          type: string
+          format: binary
+        text:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0423\
+            \u0447\u0430\u0441\u0442\u0438\u0435 \u0432 \u043A\u043E\u043D\u043A\u0443\
+            \u0440\u0441\u0430\u0445 \u0438 \u043E\u043B\u0438\u043C\u043F\u0438\u0430\
+            \u0434\u0430\u0445\" \u0438\u043B\u0438 \"\u0414\u043B\u044F \u0432\u0430\
+            \u0448\u0435\u0433\u043E \u0440\u0435\u0431\u0451\u043D\u043A\u0430 \u0443\
+            \ \u043D\u0430\u0441 \u0432\u0441\u0435\u0433\u0434\u0430 \u0435\u0441\
+            \u0442\u044C \u0447\u0430\u0439, \u0432\u043E\u0434\u0430 \u0438 \u0441\
+            \u043D\u044D\u043A\u0438\""
+      required:
+      - image
+      - text
+    FAQ:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        question:
+          type: string
+          description: "\u0412\u043F\u0438\u0448\u0438\u0442\u0435 \u0447\u0430\u0441\
+            \u0442\u043E \u0437\u0430\u0434\u0430\u0432\u0430\u0435\u043C\u044B\u0439\
+            \ \u0432\u043E\u043F\u0440\u043E\u0441"
+          maxLength: 100
+        answer:
+          type: string
+          description: "\u0414\u0430\u0439\u0442\u0435 \u0440\u0430\u0437\u0432\u0435\
+            \u0440\u043D\u0443\u0442\u044B\u0439 \u043E\u0442\u0432\u0435\u0442"
+          maxLength: 1500
+      required:
+      - question
+      - answer
+    Location:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        full_address:
+          type: string
+          description: "\u041F\u043E\u043B\u043D\u044B\u0439 \u0430\u0434\u0440\u0435\
+            \u0441 \u0434\u043B\u044F \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\
+            \u043D\u0438\u044F \u043D\u0430 \u0441\u0430\u0439\u0442\u0435. \u0410\
+            \u0432\u0442\u043E\u0433\u0435\u043D\u0435\u0440\u0438\u0440\u0443\u0435\
+            \u0442\u0441\u044F \u043D\u0430 \u043E\u0441\u043D\u043E\u0432\u0435 \u0432\
+            \u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u0440\u0430\u043D\u0435\
+            \u0435 \u0434\u0430\u043D\u043D\u044B\u0445."
+          maxLength: 256
+        latitude:
+          type: number
+          nullable: true
+        longitude:
+          type: number
+          nullable: true
+        image:
+          type: string
+          format: binary
+        schema_description:
+          type: string
+          description: "\u041C\u043E\u0436\u0435\u0442\u0435 \u0434\u043E\u0431\u0430\
+            \u0432\u0438\u0442\u044C \u043A\u0440\u0430\u0442\u043A\u043E\u0435 \u043E\
+            \u043F\u0438\u0441\u0430\u043D\u0438\u0435, \u043A\u0430\u043A \u0434\u043E\
+            \u0431\u0440\u0430\u0442\u044C\u0441\u044F. \u041D\u0430\u043F\u0440\u0438\
+            \u043C\u0435\u0440: \u0432\u0445\u043E\u0434 \u0447\u0435\u0440\u0435\u0437\
+            \ \u0441\u0435\u0440\u044B\u0435 \u0432\u043E\u0440\u043E\u0442\u0430\
+            \ \u0441\u043F\u0440\u0430\u0432\u0430 \u043E\u0442 \u0430\u043F\u0442\
+            \u0435\u043A\u0438"
+          maxLength: 250
+      required:
+      - image
+    Partner:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        description:
+          type: string
+          description: "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0438\u043D\u0444\
+            \u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u043F\u0430\u0440\u0442\
+            \u043D\u0435\u0440\u0435, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0431\
+            \u0443\u0434\u0435\u0442 \u043E\u0442\u0440\u0430\u0436\u0430\u0442\u044C\
+            \u0441\u044F \u043D\u0430 \u0441\u0430\u0439\u0442\u0435"
+        image:
+          type: string
+          format: binary
+        url:
+          type: string
+          format: uri
+          description: "\u0423\u043A\u0430\u0436\u0438\u0442\u0435 \u043F\u043E\u043B\
+            \u043D\u0443\u044E \u0441\u0441\u044B\u043B\u043A\u0443 \u043D\u0430 \u0441\
+            \u0430\u0439\u0442 \u043F\u0430\u0440\u0442\u043D\u0435\u0440\u0430, \u0432\
+            \ \u0444\u043E\u0440\u043C\u0430\u0442\u0435 - https://lewibo.org/"
+          maxLength: 200
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4]\\\
+            d|1\\d?\\d?|[1-9]\\d?)(?:\\.(?:0|25[0-5]|2[0-4]\\d|1\\d?\\d?|[1-9]\\d?)){3}|\\\
+            [[0-9a-f:.]+\\]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1\
+            -\uFFFF0-9])?(?:\\.(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1\
+            -\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\\
+            s]*)?\\z"
+      required:
+      - description
+      - image
+      - url
+    Principle:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        text:
+          type: string
+          description: "\u0423\u043A\u0430\u0436\u0438\u0442\u0435 \u043F\u0440\u0438\
+            \u043D\u0446\u0438\u043F, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0431\
+            \u0443\u0434\u0435\u0442 \u043E\u0442\u0440\u0430\u0436\u0435\u043D \u043D\
+            \u0430 \u0441\u0430\u0439\u0442\u0435"
+        image:
+          type: string
+          format: binary
+      required:
+      - text
+      - image
+    Requisite:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        text:
+          type: string
+          description: "\u0423\u043A\u0430\u0436\u0438\u0442\u0435/\u043E\u0442\u0440\
+            \u0435\u0434\u0430\u043A\u0442\u0438\u0440\u0443\u0439\u0442\u0435 \u0440\
+            \u0435\u043A\u0432\u0438\u0437\u0438\u0442\u044B \u043E\u0440\u0433\u0430\
+            \u043D\u0438\u0437\u0430\u0446\u0438\u0438"
+      required:
+      - text
+    Program:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0414\
+            \u043E\u0441\u0443\u0433\u043E\u0432\u044B\u0439 \u0446\u0435\u043D\u0442\
+            \u0440 \xAB\u0423\u044F\xBB\""
+          maxLength: 100
+        image:
+          type: string
+          format: binary
+        description:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u2014\
+            \ \u044D\u0442\u043E \u043C\u0435\u0441\u0442\u043E \u0434\u043B\u044F\
+            \ \u043E\u0431\u0449\u0435\u043D\u0438\u044F, \u0443\u0447\u0451\u0431\
+            \u044B, \u0432\u0441\u0442\u0440\u0435\u0447 \u0438 \u0434\u043E\u0441\
+            \u0443\u0433\u0430 \u0430\u0443\u043B\u044C\u0441\u043A\u0438\u0445 \u0434\
+            \u0435\u0442\u0435\u0439...\""
+        location:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0410\
+            \u0443\u043B \u0418\u043A\u043E\u043D-\u0425\u0430\u043B\u043A, \u041A\
+            \u0430\u0440\u0430\u0447\u0430\u0435\u0432\u043E-\u0427\u0435\u0440\u043A\
+            \u0435\u0441\u0441\u0438\u044F\""
+          maxLength: 100
+        characteristics:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              text:
+                type: string
+                description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\
+                  \u0417\u0430\u043D\u044F\u0442\u0438\u044F \u0432\u0435\u0441\u044C\
+                  \ \u0433\u043E\u0434\" \u0438\u043B\u0438 \"\u0417\u0430\u043D\u044F\
+                  \u0442\u0438\u044F \u0432 \u043A\u0430\u043D\u0438\u043A\u0443\u043B\
+                  \u044B\""
+                maxLength: 100
+              program:
+                type: array
+                items:
+                  type: string
+                readOnly: true
+            required:
+            - text
+          readOnly: true
+      required:
+      - name
+      - image
+      - description
+      - location
+    ProgramCharacteristic:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        text:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0417\
+            \u0430\u043D\u044F\u0442\u0438\u044F \u0432\u0435\u0441\u044C \u0433\u043E\
+            \u0434\" \u0438\u043B\u0438 \"\u0417\u0430\u043D\u044F\u0442\u0438\u044F\
+            \ \u0432 \u043A\u0430\u043D\u0438\u043A\u0443\u043B\u044B\""
+          maxLength: 100
+        program:
+          type: array
+          items:
+            type: string
+          readOnly: true
+      required:
+      - text
+    CoursePrice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        price:
+          type: string
+          description: "\u041D\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0432 \u0444\
+            \u043E\u0440\u043C\u0430\u0442\u0435 \"\u0421\u0442\u043E\u0438\u043C\u043E\
+            \u0441\u0442\u044C \u043A\u0443\u0440\u0441\u043E\u0432 3500 \u0440\u0443\
+            \u0431./\u043C\u0435\u0441.\""
+          maxLength: 100
+        included_in_price:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              text:
+                type: string
+                description: "\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\
+                  \u0421\u043D\u044D\u043A\u0438, \u0432\u043E\u0434\u0430, \u0447\
+                  \u0430\u0439 \u043D\u0430 \u043D\u0430\u0448\u0435\u0439 \u043A\u0443\
+                  \u0445\u043D\u0435\""
+                maxLength: 100
+              course_price:
+                type: array
+                items:
+                  type: string
+                readOnly: true
+            required:
+            - text
+          readOnly: true
+        not_included_in_price:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              text:
+                type: string
+                description: "\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\
+                  \u0422\u0440\u0430\u043D\u0441\u0444\u0435\u0440 \u0438\u0437 \u0432\
+                  \u0430\u0448\u0435\u0433\u043E \u0430\u0443\u043B\u0430 \u043A \u0446\
+                  \u0435\u043D\u0442\u0440\u0443\""
+                maxLength: 100
+              course_price:
+                type: array
+                items:
+                  type: string
+                readOnly: true
+            required:
+            - text
+          readOnly: true
+        payment_url:
+          type: string
+          format: uri
+          maxLength: 200
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4]\\\
+            d|1\\d?\\d?|[1-9]\\d?)(?:\\.(?:0|25[0-5]|2[0-4]\\d|1\\d?\\d?|[1-9]\\d?)){3}|\\\
+            [[0-9a-f:.]+\\]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1\
+            -\uFFFF0-9])?(?:\\.(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1\
+            -\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{2,5})?(?:[/?#][^\\\
+            s]*)?\\z"
+      required:
+      - price
+      - payment_url
+    IncludedInCoursePrice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        text:
+          type: string
+          description: "\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0421\
+            \u043D\u044D\u043A\u0438, \u0432\u043E\u0434\u0430, \u0447\u0430\u0439\
+            \ \u043D\u0430 \u043D\u0430\u0448\u0435\u0439 \u043A\u0443\u0445\u043D\
+            \u0435\""
+          maxLength: 100
+        course_price:
+          type: array
+          items:
+            type: string
+          readOnly: true
+      required:
+      - text
+    NotIncludedInCoursePrice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        text:
+          type: string
+          description: "\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0422\
+            \u0440\u0430\u043D\u0441\u0444\u0435\u0440 \u0438\u0437 \u0432\u0430\u0448\
+            \u0435\u0433\u043E \u0430\u0443\u043B\u0430 \u043A \u0446\u0435\u043D\u0442\
+            \u0440\u0443\""
+          maxLength: 100
+        course_price:
+          type: array
+          items:
+            type: string
+          readOnly: true
+      required:
+      - text
+    TeamMember:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        image:
+          type: string
+          format: binary
+        name:
+          type: string
+          description: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043C\u044F\
+            \ \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0430 \u043A\u043E\u043C\
+            \u0430\u043D\u0434\u044B"
+          maxLength: 100
+        second_name:
+          type: string
+          description: "\u041D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\
+            \u044C\u043D\u043E\u0435 \u043F\u043E\u043B\u0435. \u0412\u0432\u0435\u0434\
+            \u0438\u0442\u0435 \u043E\u0442\u0447\u0435\u0441\u0442\u0432\u043E, \u0435\
+            \u0441\u043B\u0438 \u0435\u0433\u043E \u043D\u0443\u0436\u043D\u043E \u043E\
+            \u0442\u043E\u0431\u0440\u0430\u0437\u0438\u0442\u044C \u043D\u0430 \u0441\
+            \u0442\u0440\u0430\u043D\u0438\u0446\u0435"
+          maxLength: 100
+        last_name:
+          type: string
+          description: "\u041D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\
+            \u044C\u043D\u043E\u0435 \u043F\u043E\u043B\u0435. \u0412\u0432\u0435\u0434\
+            \u0438\u0442\u0435 \u0444\u0430\u043C\u0438\u043B\u0438\u044E, \u0435\u0441\
+            \u043B\u0438 \u0435\u0435 \u043D\u0443\u0436\u043D\u043E \u043E\u0442\u043E\
+            \u0431\u0440\u0430\u0437\u0438\u0442\u044C \u043D\u0430 \u0441\u0442\u0440\
+            \u0430\u043D\u0438\u0446\u0435"
+          maxLength: 100
+        full_name:
+          type: string
+          description: "\u0410\u0432\u0442\u043E\u0433\u0435\u043D\u0435\u0440\u0438\
+            \u0440\u0443\u0435\u0442\u0441\u044F \u043D\u0430 \u043E\u0441\u043D\u043E\
+            \u0432\u0435 \u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u0434\
+            \u0430\u043D\u043D\u044B\u0445"
+          maxLength: 300
+        name_representation:
+          enum:
+          - IOF
+          - FIO
+          type: string
+          description: "\u041F\u043E\u043C\u0435\u043D\u044F\u0439\u0442\u0435, \u0435\
+            \u0441\u043B\u0438 \u0445\u043E\u0442\u0438\u0442\u0435, \u0447\u0442\u043E\
+            \u0431\u044B \u0444\u0430\u043C\u0438\u043B\u0438\u044F (\u043F\u0440\u0438\
+            \ \u043D\u0430\u043B\u0438\u0447\u0438\u0438) \u043E\u0442\u043E\u0431\
+            \u0440\u0430\u0436\u0430\u043B\u0430\u0441\u044C \u0441\u043D\u0430\u0447\
+            \u0430\u043B\u0430. \u0418\u043B\u0438 \u043D\u0430\u043E\u0431\u043E\u0440\
+            \u043E\u0442"
+        role:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0430\
+            \u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\
+            \" \u0438\u043B\u0438 \"\u043A\u0443\u0440\u0430\u0442\u043E\u0440\""
+          maxLength: 100
+      required:
+      - image
+      - name
+      - role
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"Python\
+            \ Start\""
+          maxLength: 100
+        category:
+          type: string
+          readOnly: true
+        age_groups:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0433\
+            \u0440\u0443\u043F\u043F\u044B 8+ \u043B\u0435\u0442\""
+          maxLength: 50
+        duration:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0431\
+            \u043B\u043E\u043A\u0438 \u043F\u043E 3 \u043C\u0435\u0441\u044F\u0446\
+            \u0430\" \u0438\u043B\u0438 \"1 \u0433\u043E\u0434, \u0431\u043B\u043E\
+            \u043A\u0430\u043C\u0438 \u043F\u043E 3 \u043C\u0435\u0441\u044F\u0446\
+            \u0430\""
+          maxLength: 100
+        description:
+          type: string
+          description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\u0421\
+            \u0442\u0443\u0434\u0435\u043D\u0442\u044B \u043A \u043A\u043E\u043D\u0446\
+            \u0443 \u043A\u0443\u0440\u0441\u0430 \u0431\u0443\u0434\u0443\u0442 \u0441\
+            \u0430\u043C\u0438 \u0441\u043E\u0437\u0434\u0430\u0432\u0430\u0442\u044C\
+            \ \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F.\""
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              name:
+                type: string
+                description: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \"\
+                  \u044F\u0437\u044B\u043A Python\" \u0438\u043B\u0438 \"\u0438\u0437\
+                  \u0443\u0447\u0435\u043D\u0438\u0435 \u043A\u0443\u043B\u044C\u0442\
+                  \u0443\u0440\u044B\""
+                maxLength: 100
+            required:
+            - name
+          readOnly: true
+        skills:
+          type: string
+          description: "(\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\
+            \u044C\u043D\u043E\u0435 \u043F\u043E\u043B\u0435) \u041F\u043E \u0436\
+            \u0435\u043B\u0430\u043D\u0438\u044E \u043D\u0430\u043F\u0438\u0448\u0438\
+            \u0442\u0435 \u0441\u043F\u0438\u0441\u043E\u043A \u0443\u043C\u0435\u043D\
+            \u0438\u0439, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0443\u0447\u0430\
+            \u0449\u0438\u0435\u0441\u044F \u043F\u0440\u0438\u043E\u0431\u0440\u0435\
+            \u0442\u0443\u0442 \u043F\u043E \u043E\u043A\u043E\u043D\u0447\u0430\u043D\
+            \u0438\u0438 \u043A\u0443\u0440\u0441\u0430."
+      required:
+      - name
+      - age_groups
+      - duration
+      - description
